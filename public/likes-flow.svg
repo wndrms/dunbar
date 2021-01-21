@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="375" height="512" viewBox="0 0 375 512">
+    <defs>
+        <filter id="tjmhyr8tka" width="119.8%" height="140.4%" x="-11.5%" y="-17.7%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius=".5" result="shadowSpreadOuter1"/>
+            <feOffset dx="-2" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+        </filter>
+        <path id="qsy9fl78fb" d="M10 0h111c5.523 0 10 4.477 10 10v30c0 5.523-4.477 10-10 10H77l-9.526 10.392c-.746.814-2.011.869-2.825.123-.043-.04-.084-.08-.123-.123L55 50H10C4.477 50 0 45.523 0 40V10C0 4.477 4.477 0 10 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-1060 -5040) translate(0 4788) translate(1060 252)">
+                    <rect width="374.4" height="512" rx="12.8"/>
+                    <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="11.2" font-weight="400" letter-spacing=".24">
+                        <tspan x="25.109" y="103">Oct04</tspan>
+                    </text>
+                    <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="11.2" font-weight="400" letter-spacing=".24">
+                        <tspan x="27.107" y="162.2">Oct03</tspan>
+                    </text>
+                    <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="11.2" font-weight="400" letter-spacing=".24">
+                        <tspan x="27.006" y="221.4">Oct02</tspan>
+                    </text>
+                    <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="11.2" font-weight="400" letter-spacing=".24">
+                        <tspan x="28.691" y="280.6">Oct01</tspan>
+                    </text>
+                    <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="11.2" font-weight="400" letter-spacing=".24">
+                        <tspan x="25.333" y="339.8">Sep30</tspan>
+                    </text>
+                    <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="11.2" font-weight="400" letter-spacing=".24">
+                        <tspan x="26.525" y="399">Sep29</tspan>
+                    </text>
+                    <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="11.2" font-weight="400" letter-spacing=".24">
+                        <tspan x="25.422" y="458.2">Sep28</tspan>
+                    </text>
+                    <path fill="#C1C1C1" d="M-126.4 276.8H278.4V278.40000000000003H-126.4z" transform="rotate(90 76 277.6)"/>
+                    <text fill="#EBEBEB" font-family="Montserrat-Medium, Montserrat" font-size="12.8" font-weight="400" letter-spacing=".274">
+                        <tspan x="19.2" y="37.6">Likes Flow</tspan>
+                    </text>
+                    <path fill="#A5A5A5" d="M76.8 92.8L291.2 92.8 291.2 105.6 76.8 105.6zM76.8 152H279.2V164.8H76.8zM76.8 211.2H261.6V224H76.8z"/>
+                    <path fill="#E94757" d="M76.8 270.4H296V283.2H76.8z"/>
+                    <g>
+                        <g opacity=".9" transform="translate(230 205) matrix(-1 0 0 1 131 0)">
+                            <use fill="#000" filter="url(#tjmhyr8tka)" xlink:href="#qsy9fl78fb"/>
+                            <use fill="#FFF" xlink:href="#qsy9fl78fb"/>
+                        </g>
+                        <text fill="#543DAB" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing=".3" transform="translate(230 205)">
+                            <tspan x="15.81" y="30">Sep30 : 5,030</tspan>
+                        </text>
+                    </g>
+                    <path fill="#A5A5A5" d="M76.8 329.6H320V342.40000000000003H76.8zM76.8 388.8H216.8V401.6H76.8zM76.8 448H172.8V460.8H76.8z"/>
+                    <g fill="#A5A5A5">
+                        <path d="M9.6 2c4.197 0 7.6 3.403 7.6 7.6 0 4.197-3.403 7.6-7.6 7.6-4.197 0-7.6-3.403-7.6-7.6C2 5.403 5.403 2 9.6 2zm0 1.44c-3.402 0-6.16 2.758-6.16 6.16s2.758 6.16 6.16 6.16 6.16-2.758 6.16-6.16-2.758-6.16-6.16-6.16zM9.6 8c.367 0 .67.275.714.63l.006.09v4.004c0 .398-.322.72-.72.72-.367 0-.67-.275-.714-.63l-.006-.09V8.72c0-.398.322-.72.72-.72zm0-2.242c.398 0 .72.322.72.72 0 .398-.322.72-.72.72-.398 0-.72-.322-.72-.72 0-.398.322-.72.72-.72z" transform="translate(96 23.2)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

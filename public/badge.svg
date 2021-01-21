@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="52px" height="22px" viewBox="0 0 52 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>7FE311FD-E4A9-4166-B427-8E16EE62D5C2</title>
+    <g id="UI-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="상세페이지-(2-+GUI)" transform="translate(-476.000000, -235.000000)">
+            <g id="Profile" transform="translate(376.000000, 195.000000)">
+                <g id="badge" transform="translate(100.000000, 40.000000)">
+                    <rect id="Rectangle" fill="#E94757" x="0" y="0" width="52" height="22" rx="4"></rect>
+                    <text id="Title-Copy-2" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing="0.3" fill="#FFFFFF">
+                        <tspan x="4" y="16">micro</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

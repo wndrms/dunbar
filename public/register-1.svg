@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="416" height="252" viewBox="0 0 416 252">
+    <defs>
+        <filter id="79m051h97a" width="106.5%" height="111%" x="-2.8%" y="-4.7%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius=".5" result="shadowSpreadOuter1"/>
+            <feOffset dx="2" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+        </filter>
+        <rect id="mamnym9drb" width="400" height="236" x="0" y="0" rx="10"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-442 -3480) translate(448 3486)">
+                    <use fill="#000" filter="url(#79m051h97a)" xlink:href="#mamnym9drb"/>
+                    <use fill="#FFF" xlink:href="#mamnym9drb"/>
+                </g>
+                <g transform="translate(-442 -3480) translate(448 3486) translate(16 148)">
+                    <rect width="262" height="41" x=".5" y=".5" stroke="#DFDFDF" rx="4"/>
+                    <text fill="#161616" font-family="Montserrat-Bold, Montserrat" font-size="16" font-weight="bold" letter-spacing=".343">
+                        <tspan x="8" y="27">milleniz_2021</tspan>
+                    </text>
+                    <g fill="#8B8B8B" font-family="NotoSansKR-Regular, Noto Sans KR" font-size="12" letter-spacing=".257">
+                        <text transform="translate(0 46)">
+                            <tspan x="0" y="14">입력하신 계정분석을 시작합니다!</tspan>
+                        </text>
+                    </g>
+                    <g fill="#4CAF50">
+                        <path d="M19.489 5.749c.351-.352.921-.352 1.273 0 .322.322.349.828.08 1.18l-.08.093-11.23 11.23c-.322.321-.828.348-1.18.08l-.093-.08-5.02-5.022c-.352-.351-.352-.921 0-1.273.321-.322.827-.349 1.18-.08l.092.08 4.384 4.384L19.489 5.749z" transform="translate(231 9)"/>
+                    </g>
+                </g>
+                <g transform="translate(-442 -3480) translate(448 3486) translate(287 148)">
+                    <rect width="96" height="41" x=".5" y=".5" stroke="#8B8B8B" rx="4"/>
+                    <text fill="#161616" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="14" font-weight="400" letter-spacing=".3">
+                        <tspan x="13.232" y="23">분석하기</tspan> <tspan x="63.364" y="22.5" font-family="AppleColorEmoji, Apple Color Emoji" font-weight="normal">🔬</tspan>
+                    </text>
+                </g>
+                <text fill="#8B8B8B" font-family="NotoSansKR-Regular, Noto Sans KR" font-size="14" letter-spacing=".3" transform="translate(-442 -3480) translate(448 3486)">
+                    <tspan x="16" y="80">원하는 계정을 등록 해주세요,</tspan> <tspan x="16" y="102">등록하신 계정 분석을 시작합니다.</tspan>
+                </text>
+                <text fill="#161616" font-family="AppleColorEmoji, Apple Color Emoji" font-size="20" letter-spacing=".429" transform="translate(-442 -3480) translate(448 3486)">
+                    <tspan x="16" y="46">🧐</tspan> <tspan x="39.429" y="46" font-family="Montserrat-Regular, Montserrat"> </tspan> <tspan x="45.097" y="46" font-family="Montserrat-Bold, Montserrat" font-weight="bold">Register</tspan>
+                </text>
+                <g transform="translate(-442 -3480) translate(448 3486) translate(344 16)">
+                    <circle cx="20" cy="20" r="20"/>
+                    <g fill="#E94757">
+                        <path d="M18.647 5.353c.322.322.349.828.08 1.18l-.08.093L13.273 12l5.374 5.374c.351.351.351.921 0 1.273-.322.322-.828.349-1.18.08l-.093-.08L12 13.273l-5.374 5.374c-.351.351-.921.351-1.273 0-.322-.322-.349-.828-.08-1.18l.08-.093L10.727 12 5.353 6.626c-.351-.351-.351-.921 0-1.273.322-.322.828-.349 1.18-.08l.093.08L12 10.727l5.374-5.374c.351-.351.921-.351 1.273 0z" transform="translate(8 8)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

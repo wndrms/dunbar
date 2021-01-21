@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="222" viewBox="0 0 590 222">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(0 90)">
+                        <rect width="97" height="42" fill="#E94757" rx="4"/>
+                        <g>
+                            <text fill="#FFF" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing=".3" transform="translate(24 12)">
+                                <tspan x="24.174" y="14">MZ</tspan>
+                            </text>
+                            <g>
+                                <path d="M0 0H18V18H0z" transform="translate(24 12) translate(.022)"/>
+                                <path fill="#FFF" fill-rule="nonzero" d="M14.458 4.152c.351-.351.92-.351 1.272 0 .323.323.35.828.08 1.181l-.08.092-8.422 8.423c-.322.322-.828.349-1.18.08l-.093-.08-3.765-3.766c-.352-.352-.352-.922 0-1.273.322-.322.827-.35 1.18-.08l.092.08 3.13 3.129 7.786-7.786z" transform="translate(24 12) translate(.022)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(0 90) translate(249)">
+                        <rect width="86" height="42" fill="#EBEBEB" rx="4"/>
+                        <text fill="#161616" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="14" font-weight="400" letter-spacing=".3">
+                            <tspan x="24.385" y="26">연예인</tspan>
+                        </text>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(0 90) translate(343)">
+                        <rect width="73" height="42" fill="#EBEBEB" rx="4"/>
+                        <text fill="#161616" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="14" font-weight="400" letter-spacing=".3">
+                            <tspan x="24.09" y="26">기업</tspan>
+                        </text>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(0 90) translate(424)">
+                        <rect width="86" height="42" fill="#EBEBEB" rx="4"/>
+                        <text fill="#161616" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo" font-size="14" font-weight="400" letter-spacing=".3">
+                            <tspan x="24.385" y="26">공직자</tspan>
+                        </text>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(0 90) translate(518)">
+                        <rect width="72" height="42" fill="#EBEBEB" rx="4"/>
+                        <text fill="#161616" font-family="Montserrat-Medium, Montserrat" font-size="14" font-weight="400" letter-spacing=".3">
+                            <tspan x="24.497" y="26">etc</tspan>
+                        </text>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(0 90) translate(105)">
+                        <rect width="136" height="42" fill="#543DAB" rx="4"/>
+                        <g>
+                            <text fill="#FFF" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo" font-size="14" font-weight="bold" letter-spacing=".3" transform="translate(24 12)">
+                                <tspan x="24.174" y="14">인플루언서</tspan>
+                            </text>
+                            <g>
+                                <path d="M0 0H18V18H0z" transform="translate(24 12) translate(.022)"/>
+                                <path fill="#FFF" fill-rule="nonzero" d="M14.458 4.152c.351-.351.92-.351 1.272 0 .323.323.35.828.08 1.181l-.08.092-8.422 8.423c-.322.322-.828.349-1.18.08l-.093-.08-3.765-3.766c-.352-.352-.352-.922 0-1.273.322-.322.827-.35 1.18-.08l.092.08 3.13 3.129 7.786-7.786z" transform="translate(24 12) translate(.022)"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(141)">
+                        <rect width="140" height="42" x=".504" fill="#543DAB" rx="4"/>
+                        <g>
+                            <text fill="#FFF" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing=".3" transform="translate(24.504 12)">
+                                <tspan x="24.174" y="14">3</tspan> <tspan x="32.762" y="14" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo">만</tspan> <tspan x="45.172" y="14"> ~ 10</tspan> <tspan x="77.976" y="14" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo">만</tspan>
+                            </text>
+                            <g>
+                                <path d="M0 0H18V18H0z" transform="translate(24.504 12) translate(.022)"/>
+                                <path fill="#FFF" fill-rule="nonzero" d="M14.458 4.152c.351-.351.92-.351 1.272 0 .323.323.35.828.08 1.181l-.08.092-8.422 8.423c-.322.322-.828.349-1.18.08l-.093-.08-3.765-3.766c-.352-.352-.352-.922 0-1.273.322-.322.827-.35 1.18-.08l.092.08 3.13 3.129 7.786-7.786z" transform="translate(24.504 12) translate(.022)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507)">
+                        <rect width="133" height="42" fill="#E94757" rx="4"/>
+                        <g>
+                            <text fill="#FFF" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing=".3" transform="translate(24 12)">
+                                <tspan x="24.174" y="14">5</tspan> <tspan x="32.804" y="14" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo">천</tspan> <tspan x="45.214" y="14"> ~ 3</tspan> <tspan x="71.012" y="14" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo">만</tspan>
+                            </text>
+                            <g>
+                                <path d="M0 0H18V18H0z" transform="translate(24 12) translate(.022)"/>
+                                <path fill="#FFF" fill-rule="nonzero" d="M14.458 4.152c.351-.351.92-.351 1.272 0 .323.323.35.828.08 1.181l-.08.092-8.422 8.423c-.322.322-.828.349-1.18.08l-.093-.08-3.765-3.766c-.352-.352-.352-.922 0-1.273.322-.322.827-.35 1.18-.08l.092.08 3.13 3.129 7.786-7.786z" transform="translate(24 12) translate(.022)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(289)">
+                        <rect width="150" height="42" fill="#E94757" rx="4"/>
+                        <g>
+                            <text fill="#FFF" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing=".3" transform="translate(24 12)">
+                                <tspan x="24.174" y="14">10</tspan> <tspan x="39.768" y="14" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo">만</tspan> <tspan x="52.178" y="14"> ~ 30</tspan> <tspan x="87.782" y="14" font-family="AppleSDGothicNeo-Bold, Apple SD Gothic Neo">만</tspan>
+                            </text>
+                            <g>
+                                <path d="M0 0H18V18H0z" transform="translate(24 12) translate(.022)"/>
+                                <path fill="#FFF" fill-rule="nonzero" d="M14.458 4.152c.351-.351.92-.351 1.272 0 .323.323.35.828.08 1.181l-.08.092-8.422 8.423c-.322.322-.828.349-1.18.08l-.093-.08-3.765-3.766c-.352-.352-.352-.922 0-1.273.322-.322.827-.35 1.18-.08l.092.08 3.13 3.129 7.786-7.786z" transform="translate(24 12) translate(.022)"/>
+                            </g>
+                        </g>
+                    </g>
+                    <g transform="translate(-946 -2507) translate(946 2507) translate(447)">
+                        <rect width="91" height="42" fill="#EBEBEB" rx="4"/>
+                        <text fill="#161616" font-family="Montserrat-Medium, Montserrat" font-size="14" font-weight="400" letter-spacing=".3">
+                            <tspan x="24.065" y="26">30</tspan> <tspan x="42.011" y="26" font-family="AppleSDGothicNeo-Medium, Apple SD Gothic Neo">만</tspan> <tspan x="54.421" y="26"> ~</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g transform="translate(-946 -2507) translate(946 2507) translate(0 180)">
+                    <rect width="104" height="41" x=".5" y=".5" stroke="#8B8B8B" rx="4"/>
+                    <text fill="#161616" font-family="NotoSansKR-Medium, Noto Sans KR" font-size="14" font-weight="400" letter-spacing=".3">
+                        <tspan x="26.14" y="26">검색하기</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

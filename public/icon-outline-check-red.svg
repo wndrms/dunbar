@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19px" height="18px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>D66E2ED6-F1A6-4A35-B13B-91465436382B</title>
+    <g id="UI-Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Main-Page" transform="translate(-400.000000, -401.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1920" height="1589"></rect>
+            <g id="Filter-Chips" transform="translate(376.000000, 354.000000)">
+                <g id="Group-2" transform="translate(0.000000, 35.000000)">
+                    <rect id="Rectangle" fill="#E94757" x="0" y="0" width="97" height="42" rx="4"></rect>
+                    <g id="Group" transform="translate(24.000000, 12.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                        <g id="Icon/Outline/check" transform="translate(0.021739, 0.000000)">
+                            <path d="M14.457576,4.15249915 C14.8090479,3.80102729 15.3788964,3.80102729 15.7303682,4.15249915 C16.0525508,4.47468169 16.0793993,4.98036125 15.8109139,5.33312663 L15.7303682,5.42529136 L7.30815874,13.8475008 C6.9859762,14.1696834 6.48029663,14.1965319 6.12753126,13.9280465 L6.03536653,13.8475008 L2.26963177,10.0817661 C1.91815991,9.73029423 1.91815991,9.16044575 2.26963177,8.80897389 C2.59181431,8.48679135 3.09749387,8.4599428 3.45025925,8.72842825 L3.54242398,8.80897389 L6.672,11.938 L14.457576,4.15249915 Z" id="Path"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
