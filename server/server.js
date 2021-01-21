@@ -18,14 +18,14 @@ app.get("/", (req, res) => {
     res.json({ message: "Welcome to Database"});
 })
 
-app.get('/hello', (req, res) => {
+app.get('/api/influencer', (req, res) => {
     db.query("SELECT * FROM Influencer", (err, data) => {
         if(!err) res.send({data: data});
         else res.send(err);
     })
 })
 
-app.get('/info/:id', (req, res) => {
+app.get('/api/info/:id', (req, res) => {
     const instagramid = req.params.id;
     var posts = [];
     var urls = [];

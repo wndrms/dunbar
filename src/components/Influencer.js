@@ -11,7 +11,7 @@ const Influencer = () => {
     const [init, setinit] = useState(false);
     const goHome = () => history.push("/");
     useEffect(async () => {
-        const res = await axios.get("/hello");
+        const res = await axios.get("/api/influencer");
         setArray(res.data.data);
         console.log(res.data.data);
         setinit(true);

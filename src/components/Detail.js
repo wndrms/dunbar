@@ -10,7 +10,7 @@ const Detail = ({match}) => {
     const [instaObj, setinstaObj] = useState("");
     const [imgs, setimgArray] = useState([])
     useEffect(async () => {
-        const res = await axios.get('/info/' + instagramID);
+        const res = await axios.get('/api/info/' + instagramID);
         setinstaObj(res.data.data[0]);
         setimgArray(res.data.imgs);
     }, []);
