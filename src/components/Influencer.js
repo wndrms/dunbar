@@ -8,10 +8,13 @@ import Header from "./Header";
 const Influencer = () => {
     const history = useHistory();
     const [InfluencerArray, setArray] = useState([]);
+    const [init, setinit] = useState(false);
     const goHome = () => history.push("/");
     useEffect(async () => {
         const res = await axios.get("/hello");
         setArray(res.data.data);
+        console.log(res.data.data);
+        setinit(true);
     }, []);
     return(
         <div className="free wrap influencer">
@@ -68,79 +71,89 @@ const Influencer = () => {
                     </Popup>
                     
                 </button>
-                <table id="insta_data" className="tbl">
-                    <colgroup>
-                        <col style={{width:"60px"}}/>
-                        <col style={{width:"96px"}}/>
-                        <col style={{width:"252px"}}/>
-                        <col style={{width:"168px"}}/>
-                        <col style={{width:"140px"}}/>
-                        <col style={{width:"140px"}}/>
-                        <col style={{width:"140px"}}/>
-                        <col style={{width:"140px"}}/>
-                        <col style={{width:"64px"}}/>
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th>ID/Name</th>
-                            <th>Follower</th>
-                            <th>Class</th>
-                            <th>
-                                <div>
-                                    <b>Day</b>
-                                    <span>
-                                        <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                        <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
-                                    </span>
-                                </div>
-                            </th>
-                            <th>
-                                <div>
-                                    <b>Week</b>
-                                    <span>
-                                        <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                        <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
-                                    </span>
-                                </div>
-                            </th>
-                            <th>
-                                <div>
-                                    <b>Month</b>
-                                    <span>
-                                        <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                        <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
-                                    </span>
-                                </div>
-                            </th>
-                            <th><button><img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/></button></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {InfluencerArray.map((inf, index) => {
-                            if(index < 20)
-                            return (
-                            <tr onClick={() => history.push("/detail/" + inf.id)}>
-                                <td>{index + 1}</td>
-                                <td><img src={inf.image} alt=""/></td>
-                                <td>
-                                    <span className="class-badge MZ"></span>
-                                    <p>{inf.id}</p>
-                                    <p>{inf.name}</p>
-                                </td>
-                                <td>{inf.follower}</td>
-                                <td>{inf.class}</td>
-                                <td><b className={inf.oneday>0 ? "up" : "down"}>{inf.oneday}</b></td>
-                                <td><b className={inf.oneweek>0 ? "up" : "down"}>{inf.oneweek}</b></td>
-                                <td><b className={inf.onemonth>0 ? "up" : "down"}>{inf.onemonth}</b></td>
-                                <td>
-                                    <img src={process.env.PUBLIC_URL + "02-icon-01-outline-circle.svg"} alt=""/>
-                                </td>
-                            </tr>
-                        )})}
-                    </tbody>
-                </table>
+                {(() => {
+                    if(init){
+                        return(
+                            <table id="insta_data" className="tbl">
+                                <colgroup>
+                                    <col style={{width:"60px"}}/>
+                                    <col style={{width:"96px"}}/>
+                                    <col style={{width:"252px"}}/>
+                                    <col style={{width:"168px"}}/>
+                                    <col style={{width:"140px"}}/>
+                                    <col style={{width:"140px"}}/>
+                                    <col style={{width:"140px"}}/>
+                                    <col style={{width:"140px"}}/>
+                                    <col style={{width:"64px"}}/>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th></th>
+                                        <th>ID/Name</th>
+                                        <th>Follower</th>
+                                        <th>Class</th>
+                                        <th>
+                                            <div>
+                                                <b>Day</b>
+                                                <span>
+                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
+                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                                </span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div>
+                                                <b>Week</b>
+                                                <span>
+                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
+                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                                </span>
+                                            </div>
+                                        </th>
+                                        <th>
+                                            <div>
+                                                <b>Month</b>
+                                                <span>
+                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
+                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                                </span>
+                                            </div>
+                                        </th>
+                                        <th><button><img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/></button></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {InfluencerArray.map((inf, index) => {
+                                        if(index < 20)
+                                        return (
+                                        <tr onClick={() => history.push("/detail/" + inf.id)}>
+                                            <td>{index + 1}</td>
+                                            <td><img src={inf.image} alt=""/></td>
+                                            <td>
+                                                <span className="class-badge MZ"></span>
+                                                <p>{inf.id}</p>
+                                                <p>{inf.name}</p>
+                                            </td>
+                                            <td>{inf.follower}</td>
+                                            <td>{inf.class}</td>
+                                            <td><b className={inf.oneday>0 ? "up" : "down"}>{inf.oneday}</b></td>
+                                            <td><b className={inf.oneweek>0 ? "up" : "down"}>{inf.oneweek}</b></td>
+                                            <td><b className={inf.onemonth>0 ? "up" : "down"}>{inf.onemonth}</b></td>
+                                            <td>
+                                                <img src={process.env.PUBLIC_URL + "02-icon-01-outline-circle.svg"} alt=""/>
+                                            </td>
+                                        </tr>
+                                    )})}
+                                </tbody>
+                            </table>
+                        )
+                    } else {
+                        return("로딩중입니다...")
+                    }
+                })()
+                }
+                
                 <div className="tb-page-list">
                     <button><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-left.svg"} alt="이전"/></button>
                     <ul>
