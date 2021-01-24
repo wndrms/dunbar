@@ -9,13 +9,24 @@ const Influencer = () => {
     const history = useHistory();
     const [InfluencerArray, setArray] = useState([]);
     const [init, setinit] = useState(false);
+    const [classfilter, setclassfilter] = useState([]);
     const goHome = () => history.push("/");
     useEffect(async () => {
         const res = await axios.get("/api/influencer");
         setArray(res.data.data);
-        console.log(res.data.data);
         setinit(true);
     }, []);
+    const instaclass = (num) => {
+        if(num === 1) return "MZ"
+        else if(num === 2) return "influencer"
+        else if(num === 3) return "celebrity"
+        else if(num === 4) return "enterprise"
+        else if(num === 5) return "public"
+        else if(num === 6) return "etc" 
+    }
+    const setfilter = () => {
+        
+    }
     return(
         <div className="free wrap influencer">
             <Header goHome={goHome}/>
@@ -25,21 +36,21 @@ const Influencer = () => {
                     <div className="select_wrap">
                         <p>Follower Select<button><img src={process.env.PUBLIC_URL + "02-icon-03-18-px-outline-undo.svg"} alt="reset"/></button></p>
                         <ul>
-                            <li><input type="checkbox" name="range" id="fs1"/><label for="fs1">1만</label></li>
-                            <li><input type="checkbox" name="range" id="fs2"/><label for="fs2">1만~10만</label></li>
-                            <li><input type="checkbox" name="range" id="fs3"/><label for="fs3">10만~30만</label></li>
-                            <li><input type="checkbox" name="range" id="fs4"/><label for="fs4">30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs1"/><label htmlFor="fs1">1만</label></li>
+                            <li><input type="checkbox" name="range" id="fs2"/><label htmlFor="fs2">1만~10만</label></li>
+                            <li><input type="checkbox" name="range" id="fs3"/><label htmlFor="fs3">10만~30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs4"/><label htmlFor="fs4">30만</label></li>
                         </ul>
                     </div>
                     <div className="select_wrap">
                         <p>Class Select<button><img src={process.env.PUBLIC_URL + "02-icon-03-18-px-outline-undo.svg"} alt="reset"/></button></p>
                         <ul>
-                            <li><input type="checkbox" name="_class" id="cs1"/><label for="cs1">MZ</label></li>
-                            <li><input type="checkbox" name="_class" id="cs2"/><label for="cs2">인플루언서</label></li>
-                            <li><input type="checkbox" name="_class" id="cs3"/><label for="cs3">연예인</label></li>
-                            <li><input type="checkbox" name="_class" id="cs4"/><label for="cs4">기업</label></li>
-                            <li><input type="checkbox" name="_class" id="cs5"/><label for="cs5">공직자</label></li>
-                            <li><input type="checkbox" name="_class" id="cs6"/><label for="cs6">etc</label></li>
+                            <li><input type="checkbox" name="_class" id="cs1"/><label htmlFor="cs1">MZ</label></li>
+                            <li><input type="checkbox" name="_class" id="cs2"/><label htmlFor="cs2">인플루언서</label></li>
+                            <li><input type="checkbox" name="_class" id="cs3"/><label htmlFor="cs3">연예인</label></li>
+                            <li><input type="checkbox" name="_class" id="cs4"/><label htmlFor="cs4">기업</label></li>
+                            <li><input type="checkbox" name="_class" id="cs5"/><label htmlFor="cs5">공직자</label></li>
+                            <li><input type="checkbox" name="_class" id="cs6"/><label htmlFor="cs6">etc</label></li>
                         </ul>
                     </div>
                 </form>
@@ -60,7 +71,7 @@ const Influencer = () => {
                                             type="search" 
                                             id="register-search" 
                                             placeholder="계정 이름"/>
-                                        <label for="register-search" className="gray-btn">분석하기🔬</label>
+                                        <label htmlFor="register-search" className="gray-btn">분석하기🔬</label>
                                         <button></button>
                                         <p className="message">계정은 영문으로만 입력 가능해요</p>
                                     </div>
@@ -131,7 +142,7 @@ const Influencer = () => {
                                             <td>{index + 1}</td>
                                             <td><img src={inf.image} alt=""/></td>
                                             <td>
-                                                <span className="class-badge MZ"></span>
+                                                <span className={"class-badge " + instaclass(inf.class)}>{instaclass(inf.class)}</span>
                                                 <p>{inf.id}</p>
                                                 <p>{inf.name}</p>
                                             </td>
