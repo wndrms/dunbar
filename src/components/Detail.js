@@ -51,23 +51,23 @@ const Detail = ({match}) => {
                 <ul className="info_box">
                     <li>
                         <span>Follower</span>
-                        <b>{instaObj.follower}</b>
+                        <b>{instaObj.follower.toLocaleString()}</b>
                     </li>
                     <li>
                         <span>평균 좋아요 수</span>
-                        <b>{instaObj.likes}</b>
+                        <b>{instaObj.likes.toLocaleString()}</b>
                     </li>
                     <li>
                         <span>Day</span>
-                        <b className={instaObj.oneday>0 ? "up" : "down"}>{instaObj.oneday}</b>
+                        <b className={instaObj.oneday>0 ? "up" : "down"}>{instaObj.oneday && instaObj.oneday.toLocaleString()}</b>
                     </li>
                     <li>
                         <span>Week</span>
-                        <b className={instaObj.oneweek>0 ? "up" : "down"}>{instaObj.oneweek}</b>
+                        <b className={instaObj.oneweek>0 ? "up" : "down"}>{instaObj.oneweek && instaObj.oneweek.toLocaleString()}</b>
                     </li>
                     <li>
                         <span>Month</span>
-                        <b className={instaObj.onemonth>0 ? "up" : "down"}>{instaObj.onemonth}</b>
+                        <b className={instaObj.onemonth>0 ? "up" : "down"}>{instaObj.onemonth && instaObj.onemonth.toLocaleString()}</b>
                     </li>
                 </ul>
                 <div className="chart">
