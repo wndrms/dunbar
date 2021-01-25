@@ -54,15 +54,18 @@ const Influencer = () => {
     const filtering = (n) => {
         if(follwerfilter.includes(1)) {
             if(n < 10000) return true
-        } else if(follwerfilter.includes(2)){
+        } 
+        if(follwerfilter.includes(2)){
             if(n >= 10000 && n < 100000) return true
-        } else if(follwerfilter.includes(3)){
+        } 
+        if(follwerfilter.includes(3)){
             if(n >= 100000 && n < 300000) return true
-        } else if(follwerfilter.includes(4)){
+        } 
+        if(follwerfilter.includes(4)){
             if(n >= 300000) return true
-        } else {
-            return false
-        }
+        } 
+        return false
+        
     }
     return(
         <div className="free wrap influencer">
@@ -74,9 +77,9 @@ const Influencer = () => {
                         <p>Follower Select<button><img src={process.env.PUBLIC_URL + "02-icon-03-18-px-outline-undo.svg"} alt="reset"/></button></p>
                         <ul>
                             <li><input type="checkbox" name="range" id="fs1" onClick={() => addfilter2(1)}/><label htmlFor="fs1">1만</label></li>
-                            <li><input type="checkbox" name="range" id="fs2" onClick={() => addfilter2(1)}/><label htmlFor="fs2">1만~10만</label></li>
-                            <li><input type="checkbox" name="range" id="fs3" onClick={() => addfilter2(1)}/><label htmlFor="fs3">10만~30만</label></li>
-                            <li><input type="checkbox" name="range" id="fs4" onClick={() => addfilter2(1)}/><label htmlFor="fs4">30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs2" onClick={() => addfilter2(2)}/><label htmlFor="fs2">1만~10만</label></li>
+                            <li><input type="checkbox" name="range" id="fs3" onClick={() => addfilter2(3)}/><label htmlFor="fs3">10만~30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs4" onClick={() => addfilter2(4)}/><label htmlFor="fs4">30만</label></li>
                         </ul>
                     </div>
                     <div className="select_wrap">

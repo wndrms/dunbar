@@ -51,11 +51,11 @@ const Detail = ({match}) => {
                 <ul className="info_box">
                     <li>
                         <span>Follower</span>
-                        <b>{instaObj.follower.toLocaleString()}</b>
+                        <b>{instaObj.follower && instaObj.follower.toLocaleString()}</b>
                     </li>
                     <li>
                         <span>평균 좋아요 수</span>
-                        <b>{instaObj.likes.toLocaleString()}</b>
+                        <b>{instaObj.likes && instaObj.likes.toLocaleString()}</b>
                     </li>
                     <li>
                         <span>Day</span>
