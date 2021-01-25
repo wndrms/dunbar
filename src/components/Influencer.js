@@ -8,11 +8,11 @@ import Header from "./Header";
 const Influencer = () => {
     const history = useHistory();
     const [InfluencerArray, setArray] = useState([]);
+    const [InfluencerTable, setInfluencerTable] = useState([]);
     const [init, setinit] = useState(false);
     const [classfilter, setclassfilter] = useState([]);
     const [follwerfilter, setfollwerfilter] = useState([]);
-    const [tmpfilter, settmpfilter] = useState([]);
-    const [tmp2filter, settmp2filter] = useState([]);
+    const [page, setpage] = useState(1);
     const goHome = () => history.push("/");
     useEffect(async () => {
         const res = await axios.get("/api/influencer");
@@ -36,36 +36,57 @@ const Influencer = () => {
         else if(num === 6) return "etc" 
     }
     const addfilter = (num) => {
-        let tmp = tmpfilter;
+        let tmp = classfilter;
         if(tmp.includes(num)) tmp = tmp.filter(n => n!==num)
         else tmp.push(num);
-        settmpfilter(tmp);
+        setclassfilter(tmp);
     }
     const addfilter2 = (num) => {
-        let tmp = tmp2filter;
+        let tmp = follwerfilter;
         if(tmp.includes(num)) tmp = tmp.filter(n => n!==num)
         else tmp.push(num);
-        settmp2filter(tmp);
+        setfollwerfilter(tmp);
     }
     const setfilter = () => {
-        setclassfilter(tmpfilter);
-        setfollwerfilter(tmp2filter);
+        let tmpArray = [];
+        tmpArray = InfluencerArray.filter((inf) => classfilter.includes(inf.class)).filter((inf) => filtering(inf.follower));
+        setInfluencerTable(tmpArray);
+        console.log(InfluencerTable);
     }
     const filtering = (n) => {
         if(follwerfilter.includes(1)) {
-            if(n < 10000) return true
+            if(n < 10000) return true;
         } 
         if(follwerfilter.includes(2)){
-            if(n >= 10000 && n < 100000) return true
+            if(n >= 10000 && n < 100000) return true;
         } 
         if(follwerfilter.includes(3)){
-            if(n >= 100000 && n < 300000) return true
+            if(n >= 100000 && n < 300000) return true;
         } 
         if(follwerfilter.includes(4)){
-            if(n >= 300000) return true
+            if(n >= 300000) return true;
         } 
-        return false
-        
+        return false;
+    }
+    const daysort = () => {
+        let tmp = InfluencerTable;
+        tmp = tmp.sort(function(a, b) {
+            if(a.oneday > b.oneday) return -1;
+            else if(a.oneday < b.oneday) return 1;
+            else return 0;
+        });
+        setInfluencerTable(tmp);
+        console.log(InfluencerTable);
+    }
+    const weeksort = (a, b) => {
+        if(a.oneweek > b.oneweek) return -1;
+        else if(a.oneweek < b.oneweek) return 1;
+        else return 0;
+    }
+    const monthsort = (a, b) => {
+        if(a.onemonth > b.onemonth) return -1;
+        else if(a.onemonth < b.onemonth) return 1;
+        else return 0;
     }
     return(
         <div className="free wrap influencer">
@@ -94,7 +115,7 @@ const Influencer = () => {
                         </ul>
                     </div>
                 </form>
-                <button className="gray-btn" onClick={setfilter}>검색하기🔎</button>
+                <button className="gray-btn" onClick={() => setfilter()}>검색하기🔎</button>
                 <button className="register">
                     <img src={process.env.PUBLIC_URL + "02-icon-01-outline-plus.svg"} alt="register"/>
                     <Popup
@@ -148,7 +169,7 @@ const Influencer = () => {
                                             <div>
                                                 <b>Day</b>
                                                 <span>
-                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
+                                                    <button onClick={() => daysort()}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
                                                     <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
                                                 </span>
                                             </div>
@@ -175,12 +196,10 @@ const Influencer = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {InfluencerArray.filter((inf) => classfilter.includes(inf.class))
-                                        .filter((inf) => filtering(inf.follower))
-                                        .map((inf, index) => {
-                                        if(index < 20)
+                                    {InfluencerTable.map((inf, index) => {
+                                        if(index >= (page-1) * 20 && index < page * 20)
                                         return (
-                                        <tr onClick={() => history.push("/detail/" + inf.id)}>
+                                        <tr onClick={() => history.push("/detail/" + inf.id)} key={inf.id}>
                                             <td>{index + 1}</td>
                                             <td><img src={inf.image} alt=""/></td>
                                             <td>
@@ -210,11 +229,11 @@ const Influencer = () => {
                 <div className="tb-page-list">
                     <button><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-left.svg"} alt="이전"/></button>
                     <ul>
-                        <li><button>1</button></li>
-                        <li><button>2</button></li>
-                        <li><button>3</button></li>
-                        <li><button>4</button></li>
-                        <li><button>5</button></li>
+                        <li><button onClick={() => setpage(1)}>1</button></li>
+                        <li><button onClick={() => setpage(2)}>2</button></li>
+                        <li><button onClick={() => setpage(3)}>3</button></li>
+                        <li><button onClick={() => setpage(4)}>4</button></li>
+                        <li><button onClick={() => setpage(5)}>5</button></li>
                     </ul>
                     <button><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-right.svg"} alt="다음"/></button>
                 </div>

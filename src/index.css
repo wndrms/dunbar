@@ -338,21 +338,21 @@ a.go-top:active{box-shadow: none;}
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);}
 .influencer .register.box-on{display: none;}
 
-.influencer .register-popup{
+.register-popup{
     width: 400px; height: 236px; box-sizing: border-box; padding: 24px 16px;
     position: absolute; top: -15px; right: 78px; background: #fff;
     box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.08); border-radius: 10px;
     display: none;}
-.influencer .register-popup >div{position: relative;}
-.influencer .register-popup p.header{font-size: 20px; font-weight: 700;}
-.influencer .register-popup p.text{color: #8b8b8b; margin: 16px 0 40px; font-weight: 400;}
-.influencer .register-popup .form-box{display: flex;}
-.influencer .register-popup .form-box input{width: calc(100% - 97px);}
-.influencer .register-popup .form-box label{width: 97px; margin-left: 8px;}
-.influencer .register-popup .form-box .message{visibility: visible; color: #8b8b8b; left: 0; bottom: -18px; font-weight: 400;}
-.influencer .register-popup .form-box.error .message{color: #d32f2f;}
-.influencer .register-popup button{position: absolute; top: 0; right: 0; width: 24px; height: 24px; margin:0;}
-.influencer .register-popup.on{display: block;}
+.register-popup >div{position: relative;}
+.register-popup p.header{font-size: 20px; font-weight: 700;}
+.register-popup p.text{color: #8b8b8b; margin: 16px 0 40px; font-weight: 400;}
+.register-popup .form-box{display: flex;}
+.register-popup .form-box input{width: calc(100% - 97px);}
+.register-popup .form-box label{width: 97px; margin-left: 8px;}
+.register-popup .form-box .message{visibility: visible; color: #8b8b8b; left: 0; bottom: -18px; font-weight: 400;}
+.register-popup .form-box.error .message{color: #d32f2f;}
+.register-popup button{position: absolute; top: 0; right: 0; width: 24px; height: 24px; margin:0;}
+.register-popup.on{display: block;}
 
 .influencer .container >form+button{margin-top: 40px;}
 .influencer .container .tbl th >button{width: 24px;}

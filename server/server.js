@@ -41,7 +41,10 @@ app.get('/api/info/:id', (req, res) => {
                 const [result, fields] = await pool.query("SELECT img FROM Post WHERE url=?", posts[i]);
                 urls.push(result[0].img);
             }
-            res.send({data: data, imgs: urls});
+            db.query("SELECT * FROM Influencer_data WHERE id=?", instagramid, (err, data2) => {
+                if(!err) res.send({data: data, imgs: urls, line_data: data2});
+                else res.send(err);
+            })
         } 
         else res.send(err);
     })

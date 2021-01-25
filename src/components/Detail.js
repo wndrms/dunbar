@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -8,17 +9,29 @@ const Detail = ({match}) => {
     const history = useHistory();
     const instagramID = match.params.id;
     const [instaObj, setinstaObj] = useState("");
-    const [imgs, setimgArray] = useState([])
+    const [imgs, setimgArray] = useState([]);
+    const [linedata, setlinedata] = useState([]);
+    const [bardata, setbardata] = useState([]);
     useEffect(async () => {
         const res = await axios.get('/api/info/' + instagramID);
         setinstaObj(res.data.data[0]);
         setimgArray(res.data.imgs);
+        setlinedata(res.data.line_data);
+        setbardata(res.data.line_data.slice(-7));
     }, []);
+    const instaclass = (num) => {
+        if(num === 1) return "MZ"
+        else if(num === 2) return "influencer"
+        else if(num === 3) return "celebrity"
+        else if(num === 4) return "enterprise"
+        else if(num === 5) return "public"
+        else if(num === 6) return "etc" 
+    }
     const goHome = () => history.push("/");
     return(
-        <div className="free wrap">
+        <div className="free wrap sub">
             <Header goHome={goHome}/>
-            <div className="container sub">
+            <div className="container">
                 <div className="category">
                     <Link to={"/influencer"}>Influencer</Link>
                     <span>/</span>
@@ -28,7 +41,7 @@ const Detail = ({match}) => {
                     <div className="info-wrap">
                         <figure className="user-img"><img src={instaObj.image} alt=""/></figure>
                         <div className="user-info">
-                            <span className="class-badge MZ solid"></span>
+                            <span className={"class-badge " + instaclass(instaObj.class) + " solid"}>{instaclass(instaObj.class)}</span>
                             <h2>{instaObj.id}</h2>
                             <p>{instaObj.name}</p>
                             <p className="hash-wrap">
@@ -72,13 +85,24 @@ const Detail = ({match}) => {
                 </ul>
                 <div className="chart">
                     <div className="followers-chart">
-
+                        <LineChart width={600} height={300} data={linedata}>
+                            <Line type="natural" dataKey="follower"/>
+                            <XAxis dataKey="TimeStamp"/>
+                            <YAxis />
+                        </LineChart>
                     </div>
                     <div className="likes-chart">
-
+                        <BarChart 
+                            width={300} 
+                            height={300} 
+                            layout="vertical"
+                            data={bardata}>
+                            <Bar dataKey="no" fill="#DFDFDF"/>
+                            <YAxis />
+                        </BarChart>
                     </div>
                 </div>
-                <h2>최근 게시물</h2>
+                <h3>최근 게시물</h3>
                 <ul className="img-list">
                     {imgs.map((img) => (
                         <li><img src={img} alt=""/></li>
