@@ -25,12 +25,14 @@ const Main = () => {
                     </div>
                     <a><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-down.svg"} alt=""/></a>
                 </div>
-                <div className="data-num" data-aos="fade-up">
-                    <p>
-                        <span className="counter"><CountUp end={11483}/></span><span>건</span> 데이터 수집
+                <div className="data-num">
+                    <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
+                        <span className="counter01"><CountUp end={181647}/></span><span>건</span>&nbsp;데이터 수집
                     </p>
-                    <p><span className="counter"><CountUp end={7905}/></span><span>명</span>의 검증된 인플루언서</p>
-                    <a className="go-page">데이터 확인하러 가기</a>
+                    <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                        <span className="counter02"><CountUp end={2486}/></span><span>명</span>&nbsp;검증된 인플루언서</p>
+                    <a data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">데이터 확인하러 가기</a>
+                    <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">2021년 1월 기준</p>
                 </div>
                 <div className="simple" data-aos="fade-up">
                     <div className="flex-box">

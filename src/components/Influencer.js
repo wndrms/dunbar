@@ -10,6 +10,7 @@ const Influencer = () => {
     const [InfluencerArray, setArray] = useState([]);
     const [init, setinit] = useState(false);
     const [classfilter, setclassfilter] = useState([]);
+    const [tmpfilter, settmpfilter] = useState([]);
     const goHome = () => history.push("/");
     useEffect(async () => {
         const res = await axios.get("/api/influencer");
@@ -24,8 +25,23 @@ const Influencer = () => {
         else if(num === 5) return "public"
         else if(num === 6) return "etc" 
     }
+    const classname = (num) => {
+        if(num === 1) return "MZ"
+        else if(num === 2) return "인플루언서"
+        else if(num === 3) return "연예인"
+        else if(num === 4) return "기업"
+        else if(num === 5) return "공직자"
+        else if(num === 6) return "etc" 
+    }
+    const addfilter = (num) => {
+        let tmp = tmpfilter;
+        console.log(tmp);
+        if(tmp.includes(num)) tmp = tmp.filter(n => n!==num)
+        else tmp.push(num);
+        settmpfilter(tmp);
+    }
     const setfilter = () => {
-        
+        setclassfilter(tmpfilter);
     }
     return(
         <div className="free wrap influencer">
@@ -45,16 +61,16 @@ const Influencer = () => {
                     <div className="select_wrap">
                         <p>Class Select<button><img src={process.env.PUBLIC_URL + "02-icon-03-18-px-outline-undo.svg"} alt="reset"/></button></p>
                         <ul>
-                            <li><input type="checkbox" name="_class" id="cs1"/><label htmlFor="cs1">MZ</label></li>
-                            <li><input type="checkbox" name="_class" id="cs2"/><label htmlFor="cs2">인플루언서</label></li>
-                            <li><input type="checkbox" name="_class" id="cs3"/><label htmlFor="cs3">연예인</label></li>
-                            <li><input type="checkbox" name="_class" id="cs4"/><label htmlFor="cs4">기업</label></li>
-                            <li><input type="checkbox" name="_class" id="cs5"/><label htmlFor="cs5">공직자</label></li>
-                            <li><input type="checkbox" name="_class" id="cs6"/><label htmlFor="cs6">etc</label></li>
+                            <li><input type="checkbox" name="_class" id="cs1" onClick={() => addfilter(1)} /><label htmlFor="cs1">MZ</label></li>
+                            <li><input type="checkbox" name="_class" id="cs2" onClick={() => addfilter(2)} /><label htmlFor="cs2">인플루언서</label></li>
+                            <li><input type="checkbox" name="_class" id="cs3" onClick={() => addfilter(3)} /><label htmlFor="cs3">연예인</label></li>
+                            <li><input type="checkbox" name="_class" id="cs4" onClick={() => addfilter(4)} /><label htmlFor="cs4">기업</label></li>
+                            <li><input type="checkbox" name="_class" id="cs5" onClick={() => addfilter(5)} /><label htmlFor="cs5">공직자</label></li>
+                            <li><input type="checkbox" name="_class" id="cs6" onClick={() => addfilter(6)} /><label htmlFor="cs6">etc</label></li>
                         </ul>
                     </div>
                 </form>
-                <button className="gray-btn">검색하기🔎</button>
+                <button className="gray-btn" onClick={setfilter}>검색하기🔎</button>
                 <button className="register">
                     <img src={process.env.PUBLIC_URL + "02-icon-01-outline-plus.svg"} alt="register"/>
                     <Popup
@@ -135,7 +151,7 @@ const Influencer = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {InfluencerArray.map((inf, index) => {
+                                    {InfluencerArray.filter((inf) => classfilter.includes(inf.class)).map((inf, index) => {
                                         if(index < 20)
                                         return (
                                         <tr onClick={() => history.push("/detail/" + inf.id)}>
@@ -146,11 +162,11 @@ const Influencer = () => {
                                                 <p>{inf.id}</p>
                                                 <p>{inf.name}</p>
                                             </td>
-                                            <td>{inf.follower}</td>
-                                            <td>{inf.class}</td>
-                                            <td><b className={inf.oneday>0 ? "up" : "down"}>{inf.oneday}</b></td>
-                                            <td><b className={inf.oneweek>0 ? "up" : "down"}>{inf.oneweek}</b></td>
-                                            <td><b className={inf.onemonth>0 ? "up" : "down"}>{inf.onemonth}</b></td>
+                                            <td>{inf.follower.toLocaleString()}</td>
+                                            <td>{classname(inf.class)}</td>
+                                            <td><b className={inf.oneday>0 ? "up" : "down"}>{inf.oneday && inf.oneday.toLocaleString()}</b></td>
+                                            <td><b className={inf.oneweek>0 ? "up" : "down"}>{inf.oneweek && inf.oneweek.toLocaleString()}</b></td>
+                                            <td><b className={inf.onemonth>0 ? "up" : "down"}>{inf.onemonth && inf.onemonth.toLocaleString()}</b></td>
                                             <td>
                                                 <img src={process.env.PUBLIC_URL + "02-icon-01-outline-circle.svg"} alt=""/>
                                             </td>

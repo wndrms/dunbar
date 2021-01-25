@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="548" height="512" viewBox="0 0 548 512">
+    <defs>
+        <filter id="mfsxtdibha" width="119.8%" height="140.5%" x="-11.5%" y="-17.7%" filterUnits="objectBoundingBox">
+            <feMorphology in="SourceAlpha" operator="dilate" radius=".5" result="shadowSpreadOuter1"/>
+            <feOffset dx="-2" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3.5"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.08 0"/>
+        </filter>
+        <path id="d7oshw0mib" d="M10 0h111c5.523 0 10 4.477 10 10v30c0 5.523-4.477 10-10 10H77.5L66.977 60.523c-.781.781-2.047.781-2.828 0l-.06-.063L54.5 50H10C4.477 50 0 45.523 0 40V10C0 4.477 4.477 0 10 0z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-974 -5407) translate(0 5155) translate(974 252)">
+                    <rect width="547.2" height="512" rx="12.8"/>
+                    <path stroke="#A5A5A5" stroke-dasharray="3" stroke-width=".5" d="M254 110L254 423.6" opacity=".5"/>
+                    <text fill="#EBEBEB" font-family="Montserrat-Medium, Montserrat" font-size="12.8" font-weight="400" letter-spacing=".274">
+                        <tspan x="19.2" y="37.6">Followers Trend Flow</tspan>
+                    </text>
+                    <g>
+                        <g>
+                            <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(12 416) translate(.8)">
+                                <tspan x="7.607" y="9">15k</tspan>
+                            </text>
+                            <path fill="#A5A5A5" d="M29.6 5.6H508.8V7.199999999999999H29.6z" opacity=".3" transform="translate(12 416) translate(.8)"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(12 337.6) translate(.8)">
+                                <tspan x="4.784" y="9">20k</tspan>
+                            </text>
+                            <path fill="#A5A5A5" d="M29.6 5.6H508.8V7.199999999999999H29.6z" opacity=".3" transform="translate(12 337.6) translate(.8)"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(12 259.2) translate(.8)">
+                                <tspan x="4.775" y="9">30k</tspan>
+                            </text>
+                            <path fill="#A5A5A5" d="M29.6 5.6H508.8V7.199999999999999H29.6z" opacity=".3" transform="translate(12 259.2) translate(.8)"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(12 180.8) translate(.8)">
+                                <tspan x="3.844" y="9">40k</tspan>
+                            </text>
+                            <path fill="#A5A5A5" d="M29.6 5.6H508.8V7.199999999999999H29.6z" opacity=".3" transform="translate(12 180.8) translate(.8)"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g>
+                            <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(12 102.4) translate(.8)">
+                                <tspan x="4.756" y="9">50k</tspan>
+                            </text>
+                            <path fill="#A5A5A5" d="M29.6 5.6H508.8V7.199999999999999H29.6z" opacity=".3" transform="translate(12 102.4) translate(.8)"/>
+                        </g>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(30 423.2) translate(16.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(30 423.2)">
+                            <tspan x=".316" y="23.4">Aug02</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(81 423.2) translate(17.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(81 423.2)">
+                            <tspan x="1.095" y="23.4">Aug09</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(135 423.2) translate(15.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(135 423.2)">
+                            <tspan x=".555" y="23.4">Aug16</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(186 423.2) translate(16.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(186 423.2)">
+                            <tspan x=".758" y="23.4">Aug23</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(238 423.2) translate(16.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(238 423.2)">
+                            <tspan x=".311" y="23.4">Aug30</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(290 423.2) translate(16.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(290 423.2)">
+                            <tspan x=".931" y="23.4">Sep06</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(344 423.2) translate(14.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(344 423.2)">
+                            <tspan x=".702" y="23.4">Sep13</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(394 423.2) translate(16.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(394 423.2)">
+                            <tspan x="1.199" y="23.4">Sep20</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(447 423.2) translate(15.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(447 423.2)">
+                            <tspan x=".531" y="23.4">Sep27</tspan>
+                        </text>
+                    </g>
+                    <g>
+                        <g fill="#D9D9D9">
+                            <path d="M0 0L0.8 0 0.8 8 0 8z" transform="translate(498 423.2) translate(16.4)"/>
+                        </g>
+                        <text fill="#8B8B8B" font-family="Montserrat-Medium, Montserrat" font-size="9.6" font-weight="400" letter-spacing=".206" transform="translate(498 423.2)">
+                            <tspan x="1.161" y="23.4">Oct04</tspan>
+                        </text>
+                    </g>
+                    <path stroke="#E94757" stroke-linecap="round" stroke-width="3.2" d="M41.6 390.035c4.384 2.975 32.13 10.962 53.005 5.95 20.874-5.011 41.903-.938 54.147-2.975 12.244-2.036 24.124-8.708 32.443-8.708 8.319 0 12.957 8.708 19.876 5.733 6.92-2.975 8.38-12.05 13.023-21.889 4.643-9.839 8.021-12.982 12.337-16.223 4.317-3.24 9.247-4.393 16.45-14.395 7.204-10.002 8.366-10.002 11.195-11.585 2.83-1.582 22.655-11.539 31.757-20.5 9.103-8.961 7.325-10.807 21.248-31.894 13.924-21.087 31.401-21.087 53.005-47.112 21.604-26.025 42.627-32.395 53.462-38.46 10.834-6.065 15.461-3.704 28.101-7.198 12.64-3.493 10.09 2.872 24.904-7.452 14.814-10.323 12.874-12.87 21.887-25.154 9.013-12.285 10.553-20.684 15.125-25.293 3.047-3.072 8.259-5.1 15.635-6.08"/>
+                    <g fill="#A5A5A5">
+                        <path d="M9.6 2c4.197 0 7.6 3.403 7.6 7.6 0 4.197-3.403 7.6-7.6 7.6-4.197 0-7.6-3.403-7.6-7.6C2 5.403 5.403 2 9.6 2zm0 1.44c-3.402 0-6.16 2.758-6.16 6.16s2.758 6.16 6.16 6.16 6.16-2.758 6.16-6.16-2.758-6.16-6.16-6.16zM9.6 8c.367 0 .67.275.714.63l.006.09v4.004c0 .398-.322.72-.72.72-.367 0-.67-.275-.714-.63l-.006-.09V8.72c0-.398.322-.72.72-.72zm0-2.242c.398 0 .72.322.72.72 0 .398-.322.72-.72.72-.398 0-.72-.322-.72-.72 0-.398.322-.72.72-.72z" transform="translate(168.8 23.2)"/>
+                    </g>
+                    <g transform="translate(189 250)">
+                        <g opacity=".9" transform="matrix(-1 0 0 1 131 0)">
+                            <use fill="#000" filter="url(#mfsxtdibha)" xlink:href="#d7oshw0mib"/>
+                            <use fill="#FFF" xlink:href="#d7oshw0mib"/>
+                        </g>
+                        <text fill="#543DAB" font-family="Montserrat-Bold, Montserrat" font-size="14" font-weight="bold" letter-spacing=".3">
+                            <tspan x="14.242" y="30">Aug30 : 2,690</tspan>
+                        </text>
+                        <circle cx="65" cy="76" r="3" fill="#543DAB"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
