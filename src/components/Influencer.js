@@ -10,7 +10,9 @@ const Influencer = () => {
     const [InfluencerArray, setArray] = useState([]);
     const [init, setinit] = useState(false);
     const [classfilter, setclassfilter] = useState([]);
+    const [follwerfilter, setfollwerfilter] = useState([]);
     const [tmpfilter, settmpfilter] = useState([]);
+    const [tmp2filter, settmp2filter] = useState([]);
     const goHome = () => history.push("/");
     useEffect(async () => {
         const res = await axios.get("/api/influencer");
@@ -35,13 +37,32 @@ const Influencer = () => {
     }
     const addfilter = (num) => {
         let tmp = tmpfilter;
-        console.log(tmp);
         if(tmp.includes(num)) tmp = tmp.filter(n => n!==num)
         else tmp.push(num);
         settmpfilter(tmp);
     }
+    const addfilter2 = (num) => {
+        let tmp = tmp2filter;
+        if(tmp.includes(num)) tmp = tmp.filter(n => n!==num)
+        else tmp.push(num);
+        settmp2filter(tmp);
+    }
     const setfilter = () => {
         setclassfilter(tmpfilter);
+        setfollwerfilter(tmp2filter);
+    }
+    const filtering = (n) => {
+        if(follwerfilter.includes(1)) {
+            if(n < 10000) return true
+        } else if(follwerfilter.includes(2)){
+            if(n >= 10000 && n < 100000) return true
+        } else if(follwerfilter.includes(3)){
+            if(n >= 100000 && n < 300000) return true
+        } else if(follwerfilter.includes(4)){
+            if(n >= 300000) return true
+        } else {
+            return false
+        }
     }
     return(
         <div className="free wrap influencer">
@@ -52,10 +73,10 @@ const Influencer = () => {
                     <div className="select_wrap">
                         <p>Follower Select<button><img src={process.env.PUBLIC_URL + "02-icon-03-18-px-outline-undo.svg"} alt="reset"/></button></p>
                         <ul>
-                            <li><input type="checkbox" name="range" id="fs1"/><label htmlFor="fs1">1만</label></li>
-                            <li><input type="checkbox" name="range" id="fs2"/><label htmlFor="fs2">1만~10만</label></li>
-                            <li><input type="checkbox" name="range" id="fs3"/><label htmlFor="fs3">10만~30만</label></li>
-                            <li><input type="checkbox" name="range" id="fs4"/><label htmlFor="fs4">30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs1" onClick={() => addfilter2(1)}/><label htmlFor="fs1">1만</label></li>
+                            <li><input type="checkbox" name="range" id="fs2" onClick={() => addfilter2(1)}/><label htmlFor="fs2">1만~10만</label></li>
+                            <li><input type="checkbox" name="range" id="fs3" onClick={() => addfilter2(1)}/><label htmlFor="fs3">10만~30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs4" onClick={() => addfilter2(1)}/><label htmlFor="fs4">30만</label></li>
                         </ul>
                     </div>
                     <div className="select_wrap">
@@ -151,7 +172,9 @@ const Influencer = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {InfluencerArray.filter((inf) => classfilter.includes(inf.class)).map((inf, index) => {
+                                    {InfluencerArray.filter((inf) => classfilter.includes(inf.class))
+                                        .filter((inf) => filtering(inf.follower))
+                                        .map((inf, index) => {
                                         if(index < 20)
                                         return (
                                         <tr onClick={() => history.push("/detail/" + inf.id)}>
