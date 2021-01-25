@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 import AOS from "aos";
 import { Link, useHistory } from "react-router-dom";
+import CountUp from "react-countup";
 
 const Main = () => {
     const history = useHistory();
@@ -25,8 +26,10 @@ const Main = () => {
                     <a><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-down.svg"} alt=""/></a>
                 </div>
                 <div className="data-num" data-aos="fade-up">
-                    <p><span className="counter">11,483</span><span>건</span> 데이터 수집</p>
-                    <p><span className="counter">7,905</span><span>명</span>의 검증된 인플루언서</p>
+                    <p>
+                        <span className="counter"><CountUp end={11483}/></span><span>건</span> 데이터 수집
+                    </p>
+                    <p><span className="counter"><CountUp end={7905}/></span><span>명</span>의 검증된 인플루언서</p>
                     <a className="go-page">데이터 확인하러 가기</a>
                 </div>
                 <div className="simple" data-aos="fade-up">
