@@ -107,7 +107,7 @@ const Detail = ({match}) => {
                                     </span>
                                 </div>
                                 <LineChart width={684} height={640} data={linedata}>
-                                    <Line type="linear" dataKey="follower"/>
+                                    <Line type="linear" dataKey="follower" stroke="#e94757" dot={false} strokeWidth="4"/>
                                     <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} tickFormatter={dateFormatter}/>
                                     <YAxis />
                                 </LineChart>

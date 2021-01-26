@@ -8,6 +8,7 @@ import CountUp from "react-countup";
 const Main = () => {
     const history = useHistory();
     const [flow, setflow] = useState(true);
+    const [check, setcheck] = useState(false);
     const goHome = () => history.push("/");
     useEffect(() => {
         AOS.init();
@@ -77,20 +78,35 @@ const Main = () => {
                         <div className="text-box">
                             <h3 data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
                                 관심있는 인물은<br/>더 자세히<br/>살펴보세요</h3>
-                            <ul>
-                                <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" className={flow ? "on" : ""} data-chart="trend-flow" onClick={() => setflow((prev) => !prev)}>Followers</li>
-                                <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="0" className={!flow ? "on" : ""} data-chart="likes-flow" onClick={() => setflow((prev) => !prev)}>Likes Flow</li>
-                            </ul>
-                            <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">그래프를 통해 최근 팔로워 추세 흐름을 파악하세요.</p>
+                                {check ? (
+                                    <>
+                                        <ul>
+                                            <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" className="on" data-chart="trend-flow">Followers</li>
+                                            <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-chart="likes-flow" onClick={() => {
+                                                setcheck(true);
+                                                setflow((prev) => !prev);
+                                            }}>Likes Flow</li>
+                                        </ul>
+                                        <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">그래프를 통해 최근 팔로워 추세 흐름을 파악하세요.</p>
+                                    </>
+                                ) : (
+                                    <>
+                                        <ul>
+                                            <li className={flow ? "on" : ""} data-chart="trend-flow" onClick={() => setflow((prev) => !prev)}>Followers</li>
+                                            <li className={!flow ? "on" : ""} data-chart="likes-flow" onClick={() => setflow((prev) => !prev)}>Likes Flow</li>
+                                        </ul>
+                                        <p>{flow ? "그래프를 통해 최근 팔로워 추세 흐름을 파악하세요." : "그래프를 통해 좋아요 수의 변화량을 확인하세요."}</p>
+                                    </>
+                                )}
+                                
+                            
                         </div>
                         <div class="img-box">
-                            {flow ? (
+                            <div style={{left: flow ? "0px" : "-548px"}}>
                                 <figure><img src={process.env.PUBLIC_URL + "trend-flow.svg"} alt="trend-flow"/></figure>
-                            ) : (
                                 <figure><img src={process.env.PUBLIC_URL + "likes-flow.svg"} alt="likes-flow"/></figure>
-                            )}
+                            </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
