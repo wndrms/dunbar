@@ -15,15 +15,16 @@ const Detail = ({match}) => {
     const [bardata, setbardata] = useState([]);
     const [init, setinit] = useState(false);
     let domain = [];
+    let domain2 = [];
     useEffect(async () => {
         const res = await axios.get('/api/info/' + instagramID);
         setinstaObj(res.data.data[0]);
         setimgArray(res.data.imgs);
         let datas = res.data.line_data;
         datas.map((data) => linedata.push({"date" : new Date(data.Timestamp).getTime(), "follower" : data.follower}));
-        console.log(format(new Date(linedata[0].data), "dd/MMM"));
-        domain = [linedata[0].data, linedata[linedata.length - 1].data];
-        setbardata(res.data.line_data.slice(-7));
+        domain = [linedata[0].date, linedata[linedata.length - 1].date];
+        datas.slice(-7).map((data) => bardata.push({"date" : new Date(data.Timestamp).getTime(), "likes" : data.likes}));
+        domain2 = [bardata[0].date, bardata[bardata.length - 1].date];
         setinit(true);
     }, []);
     const instaclass = (num) => {
@@ -35,11 +36,11 @@ const Detail = ({match}) => {
         else if(num === 6) return "etc" 
     }
     const dateFormatter = date => {
-        let tmp = format(new Date(date), "MMMdd");
-        console.log(tmp);
-        return format(new Date(date), "MMMdd");
+        let tmp = format(new Date(date), "MMM/dd");
+        return tmp;
     }
     const goHome = () => history.push("/");
+    const goTop = () => window.scrollTo(0, 0);
     return(
         <div className="free wrap sub">
             <Header goHome={goHome}/>
@@ -99,20 +100,33 @@ const Detail = ({match}) => {
                         </ul>
                         <div className="chart">
                             <div className="followers-chart">
-                                <LineChart width={600} height={300} data={linedata}>
+                                <div className="chart-header">
+                                    <p>Followers Trend Flow</p>
+                                    <span>
+                                        <img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/>
+                                    </span>
+                                </div>
+                                <LineChart width={684} height={640} data={linedata}>
                                     <Line type="linear" dataKey="follower"/>
-                                    <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} format={dateFormatter}/>
+                                    <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} tickFormatter={dateFormatter}/>
                                     <YAxis />
                                 </LineChart>
                             </div>
                             <div className="likes-chart">
+                                <div className="chart-header">
+                                    <p>Likes Flow</p>
+                                    <span>
+                                    <img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/>
+                                    </span>
+                                </div>
                                 <BarChart 
-                                    width={300} 
-                                    height={300} 
+                                    width={486} 
+                                    height={640} 
                                     layout="vertical"
                                     data={bardata}>
-                                    <Bar dataKey="no" fill="#DFDFDF"/>
-                                    <YAxis />
+                                    <XAxis type="number" hide />
+                                    <YAxis dataKey="date" scale="time" type="number" hasTick domain={domain2} tickFormatter={dateFormatter}/>
+                                    <Bar dataKey="likes" fill="#DFDFDF"/>
                                 </BarChart>
                             </div>
                         </div>
@@ -130,7 +144,7 @@ const Detail = ({match}) => {
                 
             </div>
             <Footer/>
-            <a className="go-top"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-arrow-up.svg"} alt="위로"/></a>
+            <a className="go-top" onClick={goTop}><img src={process.env.PUBLIC_URL + "02-icon-01-outline-arrow-up.svg"} alt="위로"/></a>
         </div>
     );
 }

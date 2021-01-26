@@ -11,7 +11,8 @@ const Main = () => {
     const goHome = () => history.push("/");
     useEffect(() => {
         AOS.init();
-    }, [])
+    }, []);
+    const goTop = () => window.scrollTo(0, 0);
     return(
         <div className="free wrap main-page">
             <Header goHome={goHome}/>
@@ -78,7 +79,7 @@ const Main = () => {
                                 관심있는 인물은<br/>더 자세히<br/>살펴보세요</h3>
                             <ul>
                                 <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" className={flow ? "on" : ""} data-chart="trend-flow" onClick={() => setflow((prev) => !prev)}>Followers</li>
-                                <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" className={!flow ? "on" : ""} data-chart="likes-flow" onClick={() => setflow((prev) => !prev)}>Likes Flow</li>
+                                <li data-aos="fade-up" data-aos-delay="200" data-aos-duration="0" className={!flow ? "on" : ""} data-chart="likes-flow" onClick={() => setflow((prev) => !prev)}>Likes Flow</li>
                             </ul>
                             <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">그래프를 통해 최근 팔로워 추세 흐름을 파악하세요.</p>
                         </div>
@@ -94,7 +95,7 @@ const Main = () => {
                 </div>
             </div>
             <Footer/>
-            <a className="go-top"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-arrow-up.svg"} alt="위로"/></a>
+            <a className="go-top" onClick={goTop}><img src={process.env.PUBLIC_URL + "02-icon-01-outline-arrow-up.svg"} alt="위로"/></a>
         </div>
     );
 }
