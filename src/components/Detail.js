@@ -2,7 +2,9 @@ import axios from "axios";
 import { format } from "date-fns";
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { Bar, BarChart, CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
+import Popup from "reactjs-popup";
+import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, Tooltip, XAxis, YAxis } from "recharts";
+import CustomTooltip from "./CustomTooltip";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -14,6 +16,7 @@ const Detail = ({match}) => {
     const [linedata, setlinedata] = useState([]);
     const [bardata, setbardata] = useState([]);
     const [init, setinit] = useState(false);
+    const [color, setcolor] = useState("#DFDFDF");
     let domain = [];
     let domain2 = [];
     useEffect(async () => {
@@ -24,7 +27,8 @@ const Detail = ({match}) => {
         datas.map((data) => linedata.push({"date" : new Date(data.Timestamp).getTime(), "follower" : data.follower}));
         domain = [linedata[0].date, linedata[linedata.length - 1].date];
         datas.slice(-7).map((data) => bardata.push({"date" : new Date(data.Timestamp).getTime(), "likes" : data.likes}));
-        domain2 = [bardata[0].date, bardata[bardata.length - 1].date];
+        domain2 = [bardata[0].date-86400, bardata[bardata.length - 1].date];
+        console.log(domain2);
         setinit(true);
     }, []);
     const instaclass = (num) => {
@@ -36,7 +40,11 @@ const Detail = ({match}) => {
         else if(num === 6) return "etc" 
     }
     const dateFormatter = date => {
-        let tmp = format(new Date(date), "MMM/dd");
+        let tmp = format(new Date(date), "MMMdd");
+        return tmp;
+    }
+    const numberFormatter = num => {
+        let tmp = (num/1000).toString() + 'k';
         return tmp;
     }
     const goHome = () => history.push("/");
@@ -103,30 +111,48 @@ const Detail = ({match}) => {
                                 <div className="chart-header">
                                     <p>Followers Trend Flow</p>
                                     <span>
-                                        <img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/>
+                                        <Popup
+                                            trigger={<img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/>}
+                                            on="hover">
+                                            <div className="pop">
+                                                <p>📈 Followers Trend Flow</p>
+                                                <p>최근 10주간의 팔로워 수 증감량입니다.</p>
+                                            </div>
+                                        </Popup>
                                     </span>
                                 </div>
-                                <LineChart width={684} height={640} data={linedata}>
+                                <LineChart width={587} height={351} data={linedata}>
                                     <Line type="linear" dataKey="follower" stroke="#e94757" dot={false} strokeWidth="4"/>
-                                    <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} tickFormatter={dateFormatter}/>
-                                    <YAxis />
+                                    <CartesianGrid horizontal vertical={false}/>
+                                    <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} tickFormatter={dateFormatter} stroke="#EEEEEE" tick={{fill: "#8b8b8b", fontSize: 12}}/>
+                                    <YAxis tickCount={5} axisLine={false} tickFormatter={numberFormatter} tick={{fill: "#8b8b8b", fontSize: 12}}/>
                                 </LineChart>
                             </div>
                             <div className="likes-chart">
                                 <div className="chart-header">
                                     <p>Likes Flow</p>
                                     <span>
-                                    <img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/>
+                                        <Popup
+                                            trigger={<img src={process.env.PUBLIC_URL + "02-icon-01-outline-info-circle.svg"} alt="infomation"/>}
+                                            on="hover">
+                                            <div className="pop">
+                                                <p>📈 Likes Trend Flow</p>
+                                                <p>최근 7일간의 좋아요 수 증감량입니다.</p>
+                                            </div>
+                                        </Popup>
                                     </span>
                                 </div>
                                 <BarChart 
                                     width={486} 
-                                    height={640} 
+                                    height={460} 
                                     layout="vertical"
-                                    data={bardata}>
+                                    data={bardata}
+                                    barGap={"58px"}>
                                     <XAxis type="number" hide />
-                                    <YAxis dataKey="date" scale="time" type="number" hasTick domain={domain2} tickFormatter={dateFormatter}/>
-                                    <Bar dataKey="likes" fill="#DFDFDF"/>
+                                    <YAxis dataKey="date" scale="time" type="number" hasTick domain={domain2} tickFormatter={dateFormatter} tick={{fill: "#8b8b8b", fontSize: 14}}/>
+                                    <Bar dataKey="likes" fill={color} barSize={16}>
+                                    </Bar>
+                                    <Tooltip />
                                 </BarChart>
                             </div>
                         </div>

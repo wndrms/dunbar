@@ -422,19 +422,16 @@ a.go-top:active{box-shadow: none;}
 .sub .chart .chart-header p{color: #a5a5a5;}
 .sub .chart .chart-header span{
     width: 24px; height: 24px; margin-left: 8px; position: relative;}
-.sub .chart .pop{
+#popup-root .pop{
     width: max-content; height: 81px; background: #fff; border-radius: 10px;
-    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.08); display: none;
-    box-sizing: border-box; padding: 16px; position: absolute; bottom: -97px; left: -31px;}
-.sub .chart .pop::after{
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.08); z-index: 1;
+    box-sizing: border-box; padding: 16px; bottom: -97px; left: -31px; top: -11px;
     display: block; content: "";
     position: absolute; left: 32px;
     border-width: 0 11px 11px; border-style: solid; 
-    border-color: #fff transparent; width: 0;}
-.sub .chart .chart-header .pop::after{top: -11px;}
-.sub .chart .chart-header .pop p:first-child{font-weight: 700; text-align: left;}
-.sub .chart .chart-header .pop p:last-child{color: #8b8b8b; margin-top: 8px; text-align: left;}
-.sub .chart >div p +span:hover .pop{display: block; z-index: 1;}
+    border-color: #fff transparent;}
+#popup-root .pop p:first-child{font-weight: 700; text-align: left;}
+#popup-root .pop p:last-child{color: #8b8b8b; margin-top: 8px; text-align: left;}
 
 .sub .chart .followers-chart{margin-right: 16px; width: 684px;}
 .sub .chart .followers-chart .bg-box{
