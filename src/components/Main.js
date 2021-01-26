@@ -11,6 +11,7 @@ const Main = () => {
     const [check, setcheck] = useState(false);
     const goHome = () => history.push("/");
     useEffect(() => {
+        window.scrollTo(0, 0);
         AOS.init();
     }, []);
     const goTop = () => window.scrollTo(0, 0);

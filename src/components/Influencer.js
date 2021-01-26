@@ -15,6 +15,7 @@ const Influencer = () => {
     const [page, setpage] = useState(1);
     const goHome = () => history.push("/");
     useEffect(async () => {
+        window.scrollTo(0, 0);
         const res = await axios.get("/api/influencer");
         setArray(res.data.data);
         setinit(true);

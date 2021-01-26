@@ -20,6 +20,7 @@ const Detail = ({match}) => {
     let domain = [];
     let domain2 = [];
     useEffect(async () => {
+        window.scrollTo(0, 0);
         const res = await axios.get('/api/info/' + instagramID);
         setinstaObj(res.data.data[0]);
         setimgArray(res.data.imgs);

@@ -1,5 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import Popup from "reactjs-popup";
+import Search from "./Search";
 
 const Header = ({goHome}) => {
     const history = useHistory();
@@ -16,7 +18,13 @@ const Header = ({goHome}) => {
                     </ul>
                 </div>
                 <div className="login-wrap">
-                    <button className="js-search-btn-on"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-search.svg"} alt="search"/></button>
+                    <Popup
+                        trigger={<button className="js-search-btn-on"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-search.svg"} alt="search"/></button>}
+                        modal>
+                        {close => (
+                            <Search close={close}/>
+                        )}
+                    </Popup>
                     <button className="gray-btn" onClick={() => {history.push("/login")}}>Log in🤝</button>
                 </div>
             </div>
