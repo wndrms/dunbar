@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import Popup from "reactjs-popup";
 import axios from 'axios';
@@ -12,7 +12,11 @@ const Influencer = () => {
     const [init, setinit] = useState(false);
     const [classfilter, setclassfilter] = useState([]);
     const [follwerfilter, setfollwerfilter] = useState([]);
+    const [sortedField, setsortedField] = useState(null);
+    const [Direction, setDirection] = useState();
     const [page, setpage] = useState(1);
+    const [group, setgroup] = useState(1);
+    let tmpArray = [];
     const goHome = () => history.push("/");
     useEffect(async () => {
         window.scrollTo(0, 0);
@@ -20,6 +24,18 @@ const Influencer = () => {
         setArray(res.data.data);
         setinit(true);
     }, []);
+    useMemo(() => {
+        let tmpArray = InfluencerTable;
+        if (sortedField !== null) {
+            tmpArray = InfluencerTable;
+            tmpArray.sort((a, b) => {
+                if(a[sortedField] > b[sortedField]) return Direction ? -1 : 1;
+                if(a[sortedField] < b[sortedField]) return Direction ? 1 : -1;
+                return 0;
+            });
+        }
+        return tmpArray
+    }, [InfluencerTable]);
     const instaclass = (num) => {
         if(num === 1) return "MZ"
         else if(num === 2) return "influencer"
@@ -69,29 +85,19 @@ const Influencer = () => {
         } 
         return false;
     }
-    const daysort = () => {
-        let tmp = InfluencerTable;
-        tmp = tmp.sort(function(a, b) {
-            if(a.oneday > b.oneday) return -1;
-            else if(a.oneday < b.oneday) return 1;
-            else return 0;
+    const Influencersort = async (field, direction) => {
+        let tmpArray = [...InfluencerTable];
+        tmpArray.sort((a, b) => {
+            if(a[field] > b[field]) return direction ? 1 : -1;
+            if(a[field] < b[field]) return direction ? -1 : 1;
+            return 0;
         });
-        setInfluencerTable(tmp);
-        console.log(InfluencerTable);
+        setInfluencerTable(tmpArray);
     }
-    const weeksort = (a, b) => {
-        if(a.oneweek > b.oneweek) return -1;
-        else if(a.oneweek < b.oneweek) return 1;
-        else return 0;
-    }
-    const monthsort = (a, b) => {
-        if(a.onemonth > b.onemonth) return -1;
-        else if(a.onemonth < b.onemonth) return 1;
-        else return 0;
-    }
+    
     return(
         <div className="free wrap influencer">
-            <Header goHome={goHome}/>
+            <Header goHome={goHome} InfluencerArray={InfluencerArray}/>
             <div className="container main">
                 <h2>Influencer</h2>
                 <form>
@@ -170,8 +176,8 @@ const Influencer = () => {
                                             <div>
                                                 <b>Day</b>
                                                 <span>
-                                                    <button onClick={() => daysort()}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                                    <button onClick={() => Influencersort("oneday", true)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
+                                                    <button onClick={() => Influencersort("oneday", false)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
                                                 </span>
                                             </div>
                                         </th>
@@ -179,8 +185,8 @@ const Influencer = () => {
                                             <div>
                                                 <b>Week</b>
                                                 <span>
-                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                                    <button onClick={() => Influencersort("oneweek", true)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
+                                                    <button onClick={() => Influencersort("oneweek", false)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
                                                 </span>
                                             </div>
                                         </th>
@@ -188,8 +194,8 @@ const Influencer = () => {
                                             <div>
                                                 <b>Month</b>
                                                 <span>
-                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                                    <button><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                                    <button onClick={() => Influencersort("onemonth", true)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
+                                                    <button onClick={() => Influencersort("onemonth", false)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
                                                 </span>
                                             </div>
                                         </th>
@@ -228,15 +234,15 @@ const Influencer = () => {
                 }
                 
                 <div className="tb-page-list">
-                    <button><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-left.svg"} alt="이전"/></button>
+                    <button onClick={() => group > 1 && setgroup(group-1)}><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-left.svg"} alt="이전"/></button>
                     <ul>
-                        <li><button onClick={() => setpage(1)}>1</button></li>
-                        <li><button onClick={() => setpage(2)}>2</button></li>
-                        <li><button onClick={() => setpage(3)}>3</button></li>
-                        <li><button onClick={() => setpage(4)}>4</button></li>
-                        <li><button onClick={() => setpage(5)}>5</button></li>
+                        {[...Array(Math.ceil(InfluencerTable.length/20))].map((n, index) => {
+                            if( index + 1 > (group-1) * 5 && index + 1 <= group * 5) return(
+                                <li><button onClick={() => setpage(index+1)}>{index+1}</button></li>
+                            )
+                        })}
                     </ul>
-                    <button><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-right.svg"} alt="다음"/></button>
+                    <button onClick={() => group*100 < InfluencerTable.length && setgroup(group+1)}><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-right.svg"} alt="다음"/></button>
                 </div>
             </div>
             <Footer/>

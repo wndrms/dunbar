@@ -10,8 +10,9 @@ const Search = ({close, InfluencerArray}) => {
         if(name === "search"){
             setsearchID(value);
         }
-        let tmpArray = [... InfluencerArray];
+        let tmpArray = InfluencerArray;
         tmpArray = tmpArray.filter((InstaObj) => InstaObj.id.includes(searchID));
+        console.log(tmpArray);
         setmatchArray(tmpArray);
     }
     const goSearch = () => history.push("/detail/" + searchID);
@@ -34,9 +35,9 @@ const Search = ({close, InfluencerArray}) => {
                             placeholder="검색하고 싶은 인스타그램 주소를 입력해주세요. ex) jong_min__park, dltlxxs_ss, nayomi0331"/>
                         <label htmlFor="search-modal"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-search.svg"} alt="검색하기"/></label>
                     </div>
-                    <ul className="auto-search">
+                    <ul className="auto-search" style={{display: "block"}}>
                        {matchArray.map((InstaObj, index) => {
-                            <li><button>InstaObj.id</button></li>
+                            <li><button>{InstaObj.id}</button></li>
                         })}
                     </ul>
                     <div className="recently-search">

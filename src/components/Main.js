@@ -10,6 +10,7 @@ const Main = () => {
     const [flow, setflow] = useState(true);
     const [check, setcheck] = useState(false);
     const goHome = () => history.push("/");
+    let InfluencerArray = [];
     useEffect(() => {
         window.scrollTo(0, 0);
         AOS.init();
@@ -17,7 +18,7 @@ const Main = () => {
     const goTop = () => window.scrollTo(0, 0);
     return(
         <div className="free wrap main-page">
-            <Header goHome={goHome}/>
+            <Header goHome={goHome} InfluencerArray={InfluencerArray}/>
             <div className="container">
                 <div className="main">
                     <div className="text-box">

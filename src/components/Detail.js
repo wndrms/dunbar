@@ -122,11 +122,11 @@ const Detail = ({match}) => {
                                         </Popup>
                                     </span>
                                 </div>
-                                <LineChart width={587} height={351} data={linedata}>
+                                <LineChart width={648} height={434} data={linedata}>
                                     <Line type="linear" dataKey="follower" stroke="#e94757" dot={false} strokeWidth="4"/>
                                     <CartesianGrid horizontal vertical={false}/>
                                     <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} tickFormatter={dateFormatter} stroke="#EEEEEE" tick={{fill: "#8b8b8b", fontSize: 12}}/>
-                                    <YAxis tickCount={5} axisLine={false} tickFormatter={numberFormatter} tick={{fill: "#8b8b8b", fontSize: 12}}/>
+                                    <YAxis tickCount={5} axisLine={false} tickFormatter={numberFormatter} tick={{fill: "#8b8b8b", fontSize: 12}} />
                                 </LineChart>
                             </div>
                             <div className="likes-chart">
@@ -144,8 +144,8 @@ const Detail = ({match}) => {
                                     </span>
                                 </div>
                                 <BarChart 
-                                    width={486} 
-                                    height={460} 
+                                    width={436} 
+                                    height={485} 
                                     layout="vertical"
                                     data={bardata}
                                     barGap={"58px"}>
