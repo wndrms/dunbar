@@ -77,7 +77,7 @@ const Detail = ({match}) => {
                                     </p>
                                 </div>
                                 <ul className="sns-wrap">
-                                    <li><button>instagram</button></li>
+                                    <li><button onClick={() => {window.location="https://www.instagram.com/" + instaObj.id}}>instagram</button></li>
                                     <li><button>facebook</button></li>
                                     <li><button>youtube</button></li>
                                     <li><button>tiktok</button></li>

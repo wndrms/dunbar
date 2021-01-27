@@ -4,12 +4,12 @@ import AuthForm from "./AuthForm"
 import Detail from "./Detail";
 import Influencer from "./Influencer";
 import Main from "./Main";
-const AppRouter = ({isLoggedIn}) => {
+const AppRouter = ({isLoggedIn, InfluencerArray}) => {
     return(
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Main/>
+                    <Main InfluencerArray={InfluencerArray}/>
                 </Route>
                 {isLoggedIn ? (
                     <>
@@ -21,7 +21,7 @@ const AppRouter = ({isLoggedIn}) => {
                             <AuthForm/>
                         </Route>
                         <Route exact path="/influencer">
-                            <Influencer/>
+                            <Influencer InfluencerArray={InfluencerArray}/>
                         </Route>
                         <Route path="/detail/:id" component={Detail}/>
                     </>

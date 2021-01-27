@@ -10,9 +10,14 @@ const Search = ({close, InfluencerArray}) => {
         if(name === "search"){
             setsearchID(value);
         }
-        let tmpArray = InfluencerArray;
-        tmpArray = tmpArray.filter((InstaObj) => InstaObj.id.includes(searchID));
-        console.log(tmpArray);
+        let tmpArray = [...InfluencerArray];
+        tmpArray = tmpArray.filter((InstaObj) => InstaObj.id.includes(value));
+        setmatchArray(tmpArray);
+    }
+    const btnClick = (instaid) => {
+        setsearchID(instaid);
+        let tmpArray = [...InfluencerArray];
+        tmpArray = tmpArray.filter((InstaObj) => InstaObj.id.includes(instaid));
         setmatchArray(tmpArray);
     }
     const goSearch = () => history.push("/detail/" + searchID);
@@ -33,12 +38,12 @@ const Search = ({close, InfluencerArray}) => {
                             value={searchID}
                             onChange={onChange}
                             placeholder="검색하고 싶은 인스타그램 주소를 입력해주세요. ex) jong_min__park, dltlxxs_ss, nayomi0331"/>
-                        <label htmlFor="search-modal"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-search.svg"} alt="검색하기"/></label>
+                        <label htmlFor="search-modal" onClick={goSearch}><img src={process.env.PUBLIC_URL + "02-icon-01-outline-search.svg"} alt="검색하기"/></label>
                     </div>
                     <ul className="auto-search" style={{display: "block"}}>
-                       {matchArray.map((InstaObj, index) => {
-                            <li><button>{InstaObj.id}</button></li>
-                        })}
+                       {matchArray.map((InstaObj) => (
+                           <li onClick={() => btnClick(InstaObj.id)}><button>{InstaObj.id}</button></li>
+                       ))}
                     </ul>
                     <div className="recently-search">
                         <div>

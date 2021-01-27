@@ -5,12 +5,11 @@ import AOS from "aos";
 import { Link, useHistory } from "react-router-dom";
 import CountUp from "react-countup";
 
-const Main = () => {
+const Main = ({InfluencerArray}) => {
     const history = useHistory();
     const [flow, setflow] = useState(true);
     const [check, setcheck] = useState(false);
     const goHome = () => history.push("/");
-    let InfluencerArray = [];
     useEffect(() => {
         window.scrollTo(0, 0);
         AOS.init();
