@@ -1,14 +1,18 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const Search = ({close}) => {
+const Search = ({close, InfluencerArray}) => {
     const history = useHistory();
     const [searchID, setsearchID] = useState("");
+    const [matchArray, setmatchArray] = useState([]);
     const onChange = (event) => {
         const {target: {name, value}} = event;
         if(name === "search"){
             setsearchID(value);
         }
+        let tmpArray = [... InfluencerArray];
+        tmpArray = tmpArray.filter((InstaObj) => InstaObj.id.includes(searchID));
+        setmatchArray(tmpArray);
     }
     const goSearch = () => history.push("/detail/" + searchID);
     return(
@@ -31,7 +35,9 @@ const Search = ({close}) => {
                         <label htmlFor="search-modal"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-search.svg"} alt="검색하기"/></label>
                     </div>
                     <ul className="auto-search">
-                        <li><button>monete_conte</button></li>
+                       {matchArray.map((InstaObj, index) => {
+                            <li><button>InstaObj.id</button></li>
+                        })}
                     </ul>
                     <div className="recently-search">
                         <div>
