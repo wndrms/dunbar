@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Search = ({close, InfluencerArray, raisingArray}) => {
@@ -6,7 +6,6 @@ const Search = ({close, InfluencerArray, raisingArray}) => {
     const [searchID, setsearchID] = useState("");
     const [matchArray, setmatchArray] = useState([]);
     const [focus, setfocus] = useState(false);
-    console.log(raisingArray);
     const onChange = (event) => {
         const {target: {name, value}} = event;
         if(name === "search"){
@@ -62,7 +61,7 @@ const Search = ({close, InfluencerArray, raisingArray}) => {
                         <p>요즘 떠오르는 인플루언서</p>
                         <ul>
                             {raisingArray.map((InstaObj) => (
-                                <li onClick={() => history.push("/detail/" + InstaObj.id)}>
+                                <li onClick={() => {window.location="#/detail/" + InstaObj.id}}>
                                     <img src={InstaObj.image}/>
                                     <span className={"class-badge " + (InstaObj.class === 1 ? "MZ" : "influencer")}>{InstaObj.class === 1 ? "MZ" : "influencer"}</span>
                                     <p>{InstaObj.id}</p>

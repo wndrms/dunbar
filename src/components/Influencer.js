@@ -9,11 +9,8 @@ import Register from "./Register";
 const Influencer = ({InfluencerArray, raisingArray}) => {
     const history = useHistory();
     const [InfluencerTable, setInfluencerTable] = useState([]);
-    const [init, setinit] = useState(true);
-    const [classfilter, setclassfilter] = useState([]);
-    const [follwerfilter, setfollwerfilter] = useState([]);
-    const [sortedField, setsortedField] = useState(null);
-    const [Direction, setDirection] = useState();
+    const [classfilter, setclassfilter] = useState([false, false, false, false, false, false]);
+    const [follwerfilter, setfollwerfilter] = useState([false, false, false, false]);
     const [page, setpage] = useState(1);
     const [group, setgroup] = useState(1);
     const goHome = () => history.push("/");
@@ -37,37 +34,28 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
         else if(num === 6) return "etc" 
     }
     const addfilter = (num) => {
-        let tmp = classfilter;
-        if(tmp.includes(num)) tmp = tmp.filter(n => n!==num)
-        else tmp.push(num);
+        let tmp = [...classfilter];
+        tmp[num] = !tmp[num];
         setclassfilter(tmp);
+        setfilter(tmp, follwerfilter);
     }
     const addfilter2 = (num) => {
-        let tmp = follwerfilter;
-        if(tmp.includes(num)) tmp = tmp.filter(n => n!==num)
-        else tmp.push(num);
+        let tmp = [...follwerfilter];
+        tmp[num] = !tmp[num];
         setfollwerfilter(tmp);
+        setfilter(classfilter, tmp);
     }
-    const setfilter = () => {
+    const setfilter = (classA, followerA) => {
         let tmpArray = [];
-        tmpArray = InfluencerArray.filter((inf) => classfilter.includes(inf.class)).filter((inf) => filtering(inf.follower));
+        tmpArray = InfluencerArray.filter((inf) => classA[inf.class]).filter((inf) => followerA[filtering(inf.follower)]);
         setInfluencerTable(tmpArray);
-        console.log(InfluencerTable);
+        console.log(tmpArray);
     }
     const filtering = (n) => {
-        if(follwerfilter.includes(1)) {
-            if(n < 10000) return true;
-        } 
-        if(follwerfilter.includes(2)){
-            if(n >= 10000 && n < 100000) return true;
-        } 
-        if(follwerfilter.includes(3)){
-            if(n >= 100000 && n < 300000) return true;
-        } 
-        if(follwerfilter.includes(4)){
-            if(n >= 300000) return true;
-        } 
-        return false;
+        if(n < 10000) return 1;
+        else if(n < 100000) return 2;
+        else if(n < 300000) return 3;
+        else return 4;
     }
     const Influencersort = async (field, direction) => {
         let tmpArray = [...InfluencerTable];
@@ -78,7 +66,11 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
         });
         setInfluencerTable(tmpArray);
     }
-    
+    const reset = (check) => {
+        if(check) setclassfilter([false, false, false, false, false, false]);
+        else setfollwerfilter([false, false, false, false]);
+        setInfluencerTable([]);
+    }
     return(
         <div className="free wrap influencer">
             <Header goHome={goHome} InfluencerArray={InfluencerArray} raisingArray={raisingArray}/>
@@ -88,29 +80,30 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
                     <div className="select_wrap">
                         <p>Follower Select<button onClick={(e) => {
                             e.preventDefault();
+                            reset(false);
                         }}><img src={process.env.PUBLIC_URL + "02-icon-03-18-px-outline-undo.svg"} alt="reset"/></button></p>
                         <ul>
-                            <li><input type="checkbox" name="range" id="fs1" onClick={() => addfilter2(1)}/><label htmlFor="fs1">1만</label></li>
-                            <li><input type="checkbox" name="range" id="fs2" onClick={() => addfilter2(2)}/><label htmlFor="fs2">1만~10만</label></li>
-                            <li><input type="checkbox" name="range" id="fs3" onClick={() => addfilter2(3)}/><label htmlFor="fs3">10만~30만</label></li>
-                            <li><input type="checkbox" name="range" id="fs4" onClick={() => addfilter2(4)}/><label htmlFor="fs4">30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs1" onClick={() => addfilter2(1)} checked={follwerfilter[1]}/><label htmlFor="fs1">1만</label></li>
+                            <li><input type="checkbox" name="range" id="fs2" onClick={() => addfilter2(2)} checked={follwerfilter[2]}/><label htmlFor="fs2">1만~10만</label></li>
+                            <li><input type="checkbox" name="range" id="fs3" onClick={() => addfilter2(3)} checked={follwerfilter[3]}/><label htmlFor="fs3">10만~30만</label></li>
+                            <li><input type="checkbox" name="range" id="fs4" onClick={() => addfilter2(4)} checked={follwerfilter[4]}/><label htmlFor="fs4">30만</label></li>
                         </ul>
                     </div>
                     <div className="select_wrap">
                         <p>Class Select<button onClick={(e) => {
                             e.preventDefault();
+                            reset(true);
                         }}><img src={process.env.PUBLIC_URL + "02-icon-03-18-px-outline-undo.svg"} alt="reset"/></button></p>
                         <ul>
-                            <li><input type="checkbox" name="_class" id="cs1" onClick={() => addfilter(1)} /><label htmlFor="cs1">MZ</label></li>
-                            <li><input type="checkbox" name="_class" id="cs2" onClick={() => addfilter(2)} /><label htmlFor="cs2">인플루언서</label></li>
-                            <li><input type="checkbox" name="_class" id="cs3" onClick={() => addfilter(3)} /><label htmlFor="cs3">연예인</label></li>
-                            <li><input type="checkbox" name="_class" id="cs4" onClick={() => addfilter(4)} /><label htmlFor="cs4">기업</label></li>
-                            <li><input type="checkbox" name="_class" id="cs5" onClick={() => addfilter(5)} /><label htmlFor="cs5">공직자</label></li>
-                            <li><input type="checkbox" name="_class" id="cs6" onClick={() => addfilter(6)} /><label htmlFor="cs6">etc</label></li>
+                            <li><input type="checkbox" name="_class" id="cs1" onClick={() => addfilter(1)} checked={classfilter[1]}/><label htmlFor="cs1">MZ</label></li>
+                            <li><input type="checkbox" name="_class" id="cs2" onClick={() => addfilter(2)} checked={classfilter[2]}/><label htmlFor="cs2">인플루언서</label></li>
+                            <li><input type="checkbox" name="_class" id="cs3" onClick={() => addfilter(3)} checked={classfilter[3]}/><label htmlFor="cs3">연예인</label></li>
+                            <li><input type="checkbox" name="_class" id="cs4" onClick={() => addfilter(4)} checked={classfilter[4]}/><label htmlFor="cs4">기업</label></li>
+                            <li><input type="checkbox" name="_class" id="cs5" onClick={() => addfilter(5)} checked={classfilter[5]}/><label htmlFor="cs5">공직자</label></li>
+                            <li><input type="checkbox" name="_class" id="cs6" onClick={() => addfilter(6)} checked={classfilter[6]}/><label htmlFor="cs6">etc</label></li>
                         </ul>
                     </div>
                 </form>
-                <button className="gray-btn" onClick={() => setfilter()}>검색하기🔎</button>
                 <button className="register">
                     <img src={process.env.PUBLIC_URL + "02-icon-01-outline-plus.svg"} alt="register"/>
                     <Popup

@@ -8,7 +8,7 @@ import CustomTooltip from "./CustomTooltip";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Detail = ({match}) => {
+const Detail = ({InfluencerArray, raisingArray, match}) => {
     const history = useHistory();
     const instagramID = match.params.id;
     const [instaObj, setinstaObj] = useState("");
@@ -52,7 +52,7 @@ const Detail = ({match}) => {
     const goTop = () => window.scrollTo(0, 0);
     return(
         <div className="free wrap sub">
-            <Header goHome={goHome}/>
+            <Header goHome={goHome} InfluencerArray={InfluencerArray} raisingArray={raisingArray}/>
             <div className="container">
                 {init ? (
                     <>
