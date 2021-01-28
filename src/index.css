@@ -383,11 +383,11 @@ input[type=search]::-webkit-search-results-decoration {display: none;}
 .influencer tr td:first-child{border-radius: 4px 0 0 4px;}
 .influencer tr td:last-child{border-radius: 0 4px 4px 0;}
 
-.influencer .tbl th span button{width: 12px; height: 12px;}
+/*.influencer .tbl th span button{width: 12px; height: 12px;}
 .influencer .tbl th span button:first-child{background: url(img/icon-outline-up.svg)}
-.influencer .tbl th span button.on:first-child{background: url(img/icon-04-12-px-outline-up-on\ \(1\).svg)}
+.influencer .tbl th span button.on:first-child{background: url(img/icon-04-12-px-outline-up-on.svg)}
 .influencer .tbl th span button:last-child{background: url(img/icon-04-12-px-outline-down-off.svg)}
-.influencer .tbl th span button.on:last-child{background: url(img/icon-04-12-px-outline-down-on.svg)}
+.influencer .tbl th span button.on:last-child{background: url(img/icon-04-12-px-outline-down-on.svg)}*/
 
 /* influencer-sub */
 .sub header .login-wrap button:last-child{visibility: hidden;}
@@ -477,18 +477,26 @@ input[type=search]::-webkit-search-results-decoration {display: none;}
 
 .sub .chart .likes-chart{width: 100%;}
 .sub .chart .likes-chart .box{display: flex; height: 60px; align-items: center; position: relative;}
-.sub .chart .likes-chart .box >p{
+.sub .chart .likes-chart >p{
     height: 100%; color: #8b8b8b; padding-right: 18px; border-right: #eee solid 2px;
     line-height: 60px;}
 .sub .chart .likes-chart .box span{height: 16px; width: 200px; background: #dfdfdf;}
-.sub .chart .likes-chart .box .pop.value{
+.sub .chart .likes-chart .pop.value{
     width: 131px; height: 51px; opacity: .9; 
     padding: 16px 0 11px; top: -48px; left: 100px;}
-.sub .chart .likes-chart .box .pop.value::after{transform: rotate(180deg); bottom: -11px; left: 54px;}
-.sub .chart .likes-chart .box .pop.value >p{color: #543dab; text-align: center; font-weight: 700;}
-.sub .chart .likes-chart .box span:hover{background: #e94757;}
-.sub .chart .likes-chart .box span:hover +.pop{display: block;}
+.sub .chart .likes-chart .pop.value::after{transform: rotate(180deg); bottom: -11px; left: 54px;}
+.sub .chart .likes-chart .pop.value >p{color: #543dab; text-align: center; font-weight: 700;}
+.sub .chart .likes-chart span:hover{background: #e94757;}
+.sub .chart .likes-chart span:hover +.pop{display: block;}
 
+.sub .chart .pop{
+    width: max-content; height: 81px; background: #fff; border-radius: 10px;
+    box-shadow: 2px 2px 7px 1px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;}
+.sub .chart .pop::after{
+    position: absolute; left: 32px;
+    border-width: 0 11px 11px; border-style: solid; 
+    border-color: #fff transparent; width: 0;}
 .sub h3{font-size: 16px; font-weight: 700; margin: 80px 0 16px;}
 
 

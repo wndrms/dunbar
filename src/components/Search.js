@@ -13,6 +13,7 @@ const Search = ({close, InfluencerArray, raisingArray}) => {
         }
         let tmpArray = [...InfluencerArray];
         tmpArray = tmpArray.filter((InstaObj) => InstaObj.id.includes(value));
+        if(value === '') tmpArray=[];
         setmatchArray(tmpArray);
     }
     const btnClick = (instaid) => {

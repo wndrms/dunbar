@@ -161,7 +161,7 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
                                         tick={{fill: "#8b8b8b", fontSize: 14}}/>
                                     <Bar dataKey="likes" fill={color} barSize={16}>
                                     </Bar>
-                                    <Tooltip />
+                                    <Tooltip content={<CustomTooltip/>}/>
                                 </BarChart>
                             </div>
                         </div>

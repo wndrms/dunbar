@@ -1,10 +1,12 @@
 import React from "react";
+import { format } from "date-fns";
 
 const CustomTooltip = ({active, payload, label}) => {
-    if(active) {
+    if(active && payload) {
+        const date = format(new Date(label), "MMMdd");
         return(
             <div className="pop value">
-                <p>{`${label} : ${payload[0].value}`}</p>
+                <p>{`${date} : ${payload[0].value}`}</p>
             </div>
         );
     }
