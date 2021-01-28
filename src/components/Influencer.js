@@ -4,6 +4,7 @@ import Popup from "reactjs-popup";
 import axios from 'axios';
 import Footer from "./Footer";
 import Header from "./Header";
+import Register from "./Register";
 
 const Influencer = ({InfluencerArray, raisingArray}) => {
     const history = useHistory();
@@ -117,23 +118,7 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
                         modal
                         position="center center">
                         { close => (
-                            <div className="register-popup">
-                                <div>
-                                    <p className="header">🧐 Register</p>
-                                    <p className="text">원하는 계정을 등록 해주세요,<br/>
-                                        등록하신 계정 분석을 시작합니다.</p>
-                                    <div className="form-box">
-                                        <input 
-                                            type="search" 
-                                            id="register-search" 
-                                            placeholder="계정 이름"/>
-                                        <label htmlFor="register-search" className="gray-btn">분석하기🔬</label>
-                                        <button></button>
-                                        <p className="message">계정은 영문으로만 입력 가능해요</p>
-                                    </div>
-                                    <button className="js-register-close" onClick={close}><img src={process.env.PUBLIC_URL + "02-icon-01-outline-times-red.svg"} alt="닫기"/></button>
-                                </div>
-                            </div>
+                            <Register close={close}/>
                         )}
                     </Popup>
                     
@@ -216,7 +201,7 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
                     <ul>
                         {[...Array(Math.ceil(InfluencerTable.length/20))].map((n, index) => {
                             if( index + 1 > (group-1) * 5 && index + 1 <= group * 5) return(
-                                <li><button onClick={() => setpage(index+1)}>{index+1}</button></li>
+                                <li><button onClick={() => setpage(index+1)} className={(index+1 === page) ? "checked" : ""}>{index+1}</button></li>
                             )
                         })}
                     </ul>
