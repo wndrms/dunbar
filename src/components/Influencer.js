@@ -5,7 +5,7 @@ import axios from 'axios';
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Influencer = ({InfluencerArray}) => {
+const Influencer = ({InfluencerArray, raisingArray}) => {
     const history = useHistory();
     const [InfluencerTable, setInfluencerTable] = useState([]);
     const [init, setinit] = useState(true);
@@ -15,23 +15,10 @@ const Influencer = ({InfluencerArray}) => {
     const [Direction, setDirection] = useState();
     const [page, setpage] = useState(1);
     const [group, setgroup] = useState(1);
-    let tmpArray = [];
     const goHome = () => history.push("/");
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-    useMemo(() => {
-        let tmpArray = InfluencerTable;
-        if (sortedField !== null) {
-            tmpArray = InfluencerTable;
-            tmpArray.sort((a, b) => {
-                if(a[sortedField] > b[sortedField]) return Direction ? -1 : 1;
-                if(a[sortedField] < b[sortedField]) return Direction ? 1 : -1;
-                return 0;
-            });
-        }
-        return tmpArray
-    }, [InfluencerTable]);
     const instaclass = (num) => {
         if(num === 1) return "MZ"
         else if(num === 2) return "influencer"
@@ -93,7 +80,7 @@ const Influencer = ({InfluencerArray}) => {
     
     return(
         <div className="free wrap influencer">
-            <Header goHome={goHome} InfluencerArray={InfluencerArray}/>
+            <Header goHome={goHome} InfluencerArray={InfluencerArray} raisingArray={raisingArray}/>
             <div className="container main">
                 <h2>Influencer</h2>
                 <form>

@@ -5,19 +5,20 @@ import AOS from "aos";
 import { Link, useHistory } from "react-router-dom";
 import CountUp from "react-countup";
 
-const Main = ({InfluencerArray}) => {
+const Main = ({InfluencerArray, raisingArray}) => {
     const history = useHistory();
     const [flow, setflow] = useState(true);
     const [check, setcheck] = useState(false);
     const goHome = () => history.push("/");
     useEffect(() => {
         window.scrollTo(0, 0);
+        
         AOS.init();
     }, []);
     const goTop = () => window.scrollTo(0, 0);
     return(
         <div className="free wrap main-page">
-            <Header goHome={goHome} InfluencerArray={InfluencerArray}/>
+            <Header goHome={goHome} InfluencerArray={InfluencerArray} raisingArray={raisingArray}/>
             <div className="container">
                 <div className="main">
                     <div className="text-box">

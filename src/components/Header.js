@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import Popup from "reactjs-popup";
 import Search from "./Search";
 
-const Header = ({goHome, InfluencerArray}) => {
+const Header = ({goHome, InfluencerArray, raisingArray}) => {
     const history = useHistory();
     return(
         <header className="header fix">
@@ -22,7 +22,7 @@ const Header = ({goHome, InfluencerArray}) => {
                         trigger={<button className="js-search-btn-on"><img src={process.env.PUBLIC_URL + "02-icon-01-outline-search.svg"} alt="search"/></button>}
                         modal>
                         {close => (
-                            <Search close={close} InfluencerArray={InfluencerArray}/>
+                            <Search close={close} InfluencerArray={InfluencerArray} raisingArray={raisingArray}/>
                         )}
                     </Popup>
                     <button className="gray-btn" onClick={() => {history.push("/login")}}>Log in🤝</button>

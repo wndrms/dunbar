@@ -28,7 +28,7 @@ const Detail = ({match}) => {
         datas.map((data) => linedata.push({"date" : new Date(data.Timestamp).getTime(), "follower" : data.follower}));
         domain = [linedata[0].date, linedata[linedata.length - 1].date];
         datas.slice(-7).map((data) => bardata.push({"date" : new Date(data.Timestamp).getTime(), "likes" : data.likes}));
-        domain2 = [bardata[0].date-86400, bardata[bardata.length - 1].date];
+        domain2 = [bardata[0].date, bardata[bardata.length - 1].date];
         console.log(domain2);
         setinit(true);
     }, []);
@@ -150,7 +150,15 @@ const Detail = ({match}) => {
                                     data={bardata}
                                     barGap={"58px"}>
                                     <XAxis type="number" hide />
-                                    <YAxis dataKey="date" scale="time" type="number" hasTick domain={domain2} tickFormatter={dateFormatter} tick={{fill: "#8b8b8b", fontSize: 14}}/>
+                                    <YAxis 
+                                        dataKey="date" 
+                                        scale="time" 
+                                        type="number" 
+                                        hasTick 
+                                        domain={domain2}
+                                        interval="preserveStartEnd"
+                                        tickFormatter={dateFormatter} 
+                                        tick={{fill: "#8b8b8b", fontSize: 14}}/>
                                     <Bar dataKey="likes" fill={color} barSize={16}>
                                     </Bar>
                                     <Tooltip />

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-const Search = ({close, InfluencerArray}) => {
+const Search = ({close, InfluencerArray, raisingArray}) => {
     const history = useHistory();
     const [searchID, setsearchID] = useState("");
     const [matchArray, setmatchArray] = useState([]);
+    console.log(raisingArray);
     const onChange = (event) => {
         const {target: {name, value}} = event;
         if(name === "search"){
@@ -57,11 +58,13 @@ const Search = ({close, InfluencerArray}) => {
                     <div className="rising">
                         <p>요즘 떠오르는 인플루언서</p>
                         <ul>
-                            <li>
-                                <img />
-                                <span className="class-badge MZ">MZ</span>
-                                <p>all_zero._.k</p>
-                            </li>
+                            {raisingArray.map((InstaObj) => (
+                                <li onClick={() => history.push("/detail/" + InstaObj.id)}>
+                                    <img src={InstaObj.image}/>
+                                    <span className={"class-badge " + (InstaObj.class === 1 ? "MZ" : "influencer")}>{InstaObj.class === 1 ? "MZ" : "influencer"}</span>
+                                    <p>{InstaObj.id}</p>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </div>
