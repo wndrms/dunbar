@@ -50,6 +50,28 @@ app.get('/api/info/:id', (req, res) => {
     })
 })
 
+app.get('/api/history', (req, res) => {
+    db.query("SELECT * FROM SearchHistory order by Timestamp DESC", (err, data) => {
+        if(!err) res.send({history: data});
+        else res.send(err);
+    })
+})
+
+app.post('/api/history/:id', (req, res) => {
+    const instagramid = req.params.id;
+    db.query("INSERT INTO SearchHistory(id) VALUE(?) ON duplicate key update id=?, Timestamp=current_timestamp()", [instagramid, instagramid], (err, data) => {
+        if(!err) res.send({history: data});
+        else res.send(err);
+    })
+})
+
+app.post('/api/delete/history', (req, res) => {
+    db.query("Delete from SearchHistory", (err, data) => {
+        if(!err) res.send({history: data});
+        else res.send(err);
+    })
+})
+
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
