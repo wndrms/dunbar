@@ -617,3 +617,5 @@ input[type=search]::-webkit-search-results-decoration {display: none;}
 .influencer-button{
     display: flex; justify-content: center; align-items: flex-start; 
     flex-direction: column; width: 1200px; height: 80vh; margin: 0 auto;}
+
+.popup-content .form-box .register-search+button{top: 9px; right: 110px;}

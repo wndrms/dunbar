@@ -24,8 +24,8 @@ const Main = ({InfluencerArray, raisingArray}) => {
                     <div className="text-box">
                         <p>현재 가장 인기 있는<br/>인플루언서를<br/>찾아보세요.</p>
                         <div className="btn-wrap">
-                            <a className="gray-btn">Sign up for free</a>
-                            <a className="gray-btn">Contact us</a>
+			    <Link to="/login" className="gray-btn">Sign up for free</Link>
+			    <Link to="/influencer" className="gray-btn">Contact us</Link>
                         </div>
                     </div>
                     <a><img src={process.env.PUBLIC_URL + "02-icon-01-outline-chevron-down.svg"} alt=""/></a>
@@ -36,7 +36,7 @@ const Main = ({InfluencerArray, raisingArray}) => {
                     </p>
                     <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
                         <span className="counter02"><CountUp end={2486}/></span><span>명</span>&nbsp;검증된 인플루언서</p>
-                    <a data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">데이터 확인하러 가기</a>
+		    <Link to="/influencer" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">데이터 확인하러 가기</Link>
                     <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">2021년 1월 기준</p>
                 </div>
                 <div className="simple">
@@ -46,7 +46,7 @@ const Main = ({InfluencerArray, raisingArray}) => {
                                 간편하게 찾고<br/>세심하게 살펴보기</h3>
                             <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">범위를 설정하고 검색 해보세요,<br/>
                                 원하는 조건의 인플루언서를 찾아볼 수 있습니다.</p>
-                            <a data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">조건 검색하러 가기</a>
+			    <Link to="/influencer" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">조건 검색하러 가기</Link>
                         </div>
                         <figure data-aos="fade-up" data-aos-duration="40000"><img src={process.env.PUBLIC_URL + "search-l.gif"} alt=""/></figure>
                     </div>
@@ -58,7 +58,7 @@ const Main = ({InfluencerArray, raisingArray}) => {
                                 새로운 계정 등록<br/>데이터 분석 시작</h3>
                             <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">파악하고 싶은 계정,<br/>
                                 등록 이후 바로 데이터 분석을 시작합니다.</p>
-                            <a data-aos="fade-up" data-aos-dealy="300" data-aos-duration="1000" className="go-page">계정 등록하러 가기</a>
+			    <Link to="/influencer" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">계정 등록하러 가기</Link>
                         </div>
                         <figure data-aos="fade-up" data-aos-duration="40000"><img src={process.env.PUBLIC_URL + "register-l.gif"} alt=""/></figure>
                     </div>
@@ -70,7 +70,7 @@ const Main = ({InfluencerArray, raisingArray}) => {
                             실시간 데이터 반영<br/>랭킹을 확인하세요</h3>
                             <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">조건별 실시간 순위를 통해,<br/>
                                 지금, 영향력을 빠르게 키우는 인물을 발견할 수 있습니다.</p>
-                            <a data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">실시간 랭킹 보기</a>
+			    <Link to="/influencer" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">실시간 랭킹 보기</Link>
                         </div>
                         <figure><img src={process.env.PUBLIC_URL + "ranking-list-12.jpg"} alt="랭킹 차트 이미지"/></figure>
                     </div>
