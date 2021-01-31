@@ -486,8 +486,6 @@ input[type=search]::-webkit-search-results-decoration {display: none;}
     padding: 16px 0 11px; top: -48px; left: 100px;}
 .sub .chart .likes-chart .pop.value::after{transform: rotate(180deg); bottom: -11px; left: 54px;}
 .sub .chart .likes-chart .pop.value >p{color: #543dab; text-align: center; font-weight: 700;}
-.sub .chart .likes-chart span:hover{background: #e94757;}
-.sub .chart .likes-chart span:hover +.pop{display: block;}
 
 .sub .chart .pop{
     width: max-content; height: 81px; background: #fff; border-radius: 10px;

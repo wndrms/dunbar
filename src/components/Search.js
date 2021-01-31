@@ -30,7 +30,8 @@ const Search = ({close, InfluencerArray, raisingArray}) => {
     }
     const goSearch = (instaid) => {
         axios.post('/api/history/' + instaid);
-        history.push("/detail/" + instaid);
+        window.location="/#/detail/" + instaid;
+        //history.push("/detail/" + instaid);
     }
     const delHistory = () => {
         axios.post('/api/delete/history');

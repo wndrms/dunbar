@@ -49,7 +49,6 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
         let tmpArray = [];
         tmpArray = InfluencerArray.filter((inf) => classA[inf.class]).filter((inf) => followerA[filtering(inf.follower)]);
         setInfluencerTable(tmpArray);
-        console.log(tmpArray);
     }
     const filtering = (n) => {
         if(n < 10000) return 1;

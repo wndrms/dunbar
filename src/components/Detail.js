@@ -29,7 +29,6 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
         domain = [linedata[0].date, linedata[linedata.length - 1].date];
         datas.slice(-7).map((data) => bardata.push({"date" : new Date(data.Timestamp).getTime(), "likes" : data.likes}));
         domain2 = [bardata[0].date, bardata[bardata.length - 1].date];
-        console.log(domain2);
         setinit(true);
     }, []);
     const instaclass = (num) => {
@@ -59,7 +58,7 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
                         <div className="category">
                             <Link to={"/influencer"}>Influencer</Link>
                             <span>/</span>
-                            <a className="on">{instaObj.id}</a>
+                            <a onClick={() => window.location.reload()} className="on">{instaObj.id}</a>
                         </div>
                         <div className="banner_box">
                             <div className="info-wrap">

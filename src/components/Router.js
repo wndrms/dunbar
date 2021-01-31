@@ -23,7 +23,7 @@ const AppRouter = ({isLoggedIn, InfluencerArray, raisingArray}) => {
                         <Route exact path="/influencer">
                             <Influencer InfluencerArray={InfluencerArray} raisingArray={raisingArray}/>
                         </Route>
-                        <Route path="/detail/:id" 
+                        <Route exact path="/detail/:id" 
                             render={(props) => <Detail InfluencerArray={InfluencerArray} raisingArray={raisingArray} {...props}/>}/>
                     </>
                 )}
