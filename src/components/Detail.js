@@ -17,11 +17,10 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
     const [bardata, setbardata] = useState([]);
     const [init, setinit] = useState(false);
     const [color, setcolor] = useState("#DFDFDF");
+    const [activeIndex, setindex] = useState(null);
     let domain = [];
     let domain2 = [];
     useEffect(async () => {
-        console.log(instagramID);
-        console.log(match.params.id);
         window.scrollTo(0, 0);
         const res = await axios.get('/api/info/' + instagramID);
         setinstaObj(res.data.data[0]);
@@ -124,8 +123,8 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
                                     </span>
                                 </div>
                                 <LineChart width={648} height={434} data={linedata}>
-                                    <Line type="linear" dataKey="follower" stroke="#e94757" dot={false} strokeWidth="4"/>
                                     <CartesianGrid horizontal vertical={false}/>
+                                    <Line type="linear" dataKey="follower" stroke="#e94757" dot={false} strokeWidth="4"/>
                                     <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} tickFormatter={dateFormatter} stroke="#EEEEEE" tick={{fill: "#8b8b8b", fontSize: 12}}/>
                                     <YAxis tickCount={5} axisLine={false} tickFormatter={numberFormatter} tick={{fill: "#8b8b8b", fontSize: 12}} />
                                 </LineChart>
@@ -161,6 +160,9 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
                                         tickFormatter={dateFormatter} 
                                         tick={{fill: "#8b8b8b", fontSize: 14}}/>
                                     <Bar dataKey="likes" fill={color} barSize={16}>
+                                        {bardata.map((entry, index) => (
+                                            <Cell cursor="pointer" onMouseEnter={() => setindex(index)} onMouseLeave={() => setindex(null)} fill={index === activeIndex ? "#e94757" : "#DFDFDF"} key={`cell-${index}`}/>
+                                        ))}
                                     </Bar>
                                     <Tooltip content={<CustomTooltip/>}/>
                                 </BarChart>
