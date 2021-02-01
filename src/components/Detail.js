@@ -20,6 +20,8 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
     let domain = [];
     let domain2 = [];
     useEffect(async () => {
+        console.log(instagramID);
+        console.log(match.params.id);
         window.scrollTo(0, 0);
         const res = await axios.get('/api/info/' + instagramID);
         setinstaObj(res.data.data[0]);
@@ -30,7 +32,7 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
         datas.slice(-7).map((data) => bardata.push({"date" : new Date(data.Timestamp).getTime(), "likes" : data.likes}));
         domain2 = [bardata[0].date, bardata[bardata.length - 1].date];
         setinit(true);
-    }, []);
+    }, [match.params.id]);
     const instaclass = (num) => {
         if(num === 1) return "MZ"
         else if(num === 2) return "influencer"

@@ -359,7 +359,7 @@ input[type=search]::-webkit-search-results-decoration {display: none;}
 .register-popup .form-box label{width: 97px; margin-left: 8px;}
 .register-popup .form-box .message{visibility: visible; color: #8b8b8b; left: 0; bottom: -18px; font-weight: 400;}
 .register-popup .form-box.error .message{color: #d32f2f;}
-.register-popup button{position: absolute; top: 0; right: 0; width: 24px; height: 24px; margin:0;}
+.register-popup button{position: absolute; top: 9px; right: 110px; width: 24px; height: 24px; margin:0;}
 
 .influencer .container >form+button{margin-top: 40px;}
 .influencer .container .tbl th >button{width: 24px;}
@@ -615,5 +615,3 @@ input[type=search]::-webkit-search-results-decoration {display: none;}
 .influencer-button{
     display: flex; justify-content: center; align-items: flex-start; 
     flex-direction: column; width: 1200px; height: 80vh; margin: 0 auto;}
-
-.popup-content .form-box .register-search+button{top: 9px; right: 110px;}
