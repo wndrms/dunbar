@@ -122,7 +122,7 @@ const Detail = ({InfluencerArray, raisingArray, match}) => {
                                         </Popup>
                                     </span>
                                 </div>
-                                <LineChart width={648} height={434} data={linedata}>
+                                <LineChart width={648} height={434} data={linedata} margin={{ top: 0, left: 0, right: 0, bottom: 0 }}>
                                     <CartesianGrid horizontal vertical={false}/>
                                     <Line type="linear" dataKey="follower" stroke="#e94757" dot={false} strokeWidth="4"/>
                                     <XAxis dataKey="date" scale="time" type="number" hasTick domain={domain} tickFormatter={dateFormatter} stroke="#EEEEEE" tick={{fill: "#8b8b8b", fontSize: 12}}/>
