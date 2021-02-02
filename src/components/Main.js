@@ -12,13 +12,12 @@ const Main = ({InfluencerArray, raisingArray}) => {
     const goHome = () => history.push("/");
     useEffect(() => {
         window.scrollTo(0, 0);
-        
         AOS.init();
     }, []);
     const goTop = () => window.scrollTo(0, 0);
     return(
         <div className="free wrap main-page">
-            <Header goHome={goHome} InfluencerArray={InfluencerArray} raisingArray={raisingArray}/>
+            <Header goHome={goHome} InfluencerArray={InfluencerArray} raisingArray={raisingArray} isHome={true}/>
             <div className="container">
                 <div className="main">
                     <div className="text-box">

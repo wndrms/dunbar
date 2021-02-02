@@ -108,6 +108,7 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
                     <Popup
                         trigger={<p>Register</p>}
                         modal
+                        lockScroll
                         position="center center">
                         { close => (
                             <Register close={close}/>
