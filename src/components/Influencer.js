@@ -13,6 +13,9 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
     const [follwerfilter, setfollwerfilter] = useState([false, false, false, false]);
     const [page, setpage] = useState(1);
     const [group, setgroup] = useState(1);
+    const [onDay, setday] = useState(false);
+    const [onWeek, setweek] = useState(false);
+    const [onMonth, setmonth] = useState(false);
     const goHome = () => history.push("/");
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -139,8 +142,14 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
                                 <div>
                                     <b>Day</b>
                                     <span>
-                                        <button onClick={() => Influencersort("oneday", true)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                        <button onClick={() => Influencersort("oneday", false)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                        <button onClick={() => {
+                                            Influencersort("oneday", true);
+                                            setday((prev) => !prev);
+                                        }}><img src={process.env.PUBLIC_URL + (onDay ? "icon-03-18-px-outline-up-on.svg" : "icon-03-18-px-outline-up-off.svg")} alt="up"/></button>
+                                        <button onClick={() => {
+                                            Influencersort("oneday", false);
+                                            setday((prev) => !prev);
+                                        }}><img src={process.env.PUBLIC_URL + (onDay ? "icon-03-18-px-outline-down-off.svg" : "icon-03-18-px-outline-down-on.svg")} alt="down"/></button>
                                     </span>
                                 </div>
                             </th>
@@ -148,8 +157,14 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
                                 <div>
                                     <b>Week</b>
                                     <span>
-                                        <button onClick={() => Influencersort("oneweek", true)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                        <button onClick={() => Influencersort("oneweek", false)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                        <button onClick={() => {
+                                            Influencersort("oneweek", true);
+                                            setweek((prev) => !prev);
+                                        }}><img src={process.env.PUBLIC_URL + (onWeek ? "icon-03-18-px-outline-up-on.svg" : "icon-03-18-px-outline-up-off.svg")} alt="up"/></button>
+                                        <button onClick={() => {
+                                            Influencersort("oneweek", false);
+                                            setweek((prev) => !prev);
+                                        }}><img src={process.env.PUBLIC_URL + (onWeek ? "icon-03-18-px-outline-down-off.svg" : "icon-03-18-px-outline-down-on.svg")} alt="down"/></button>
                                     </span>
                                 </div>
                             </th>
@@ -157,8 +172,14 @@ const Influencer = ({InfluencerArray, raisingArray}) => {
                                 <div>
                                     <b>Month</b>
                                     <span>
-                                        <button onClick={() => Influencersort("onemonth", true)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-up-off.svg"} alt="up"/></button>
-                                        <button onClick={() => Influencersort("onemonth", false)}><img src={process.env.PUBLIC_URL + "icon-03-18-px-outline-down-on.svg"} alt="down"/></button>
+                                        <button onClick={() => {
+                                            Influencersort("onemonth", true);
+                                            setmonth((prev) => !prev);
+                                        }}><img src={process.env.PUBLIC_URL + (onMonth ? "icon-03-18-px-outline-up-on.svg" : "icon-03-18-px-outline-up-off.svg")} alt="up"/></button>
+                                        <button onClick={() => {
+                                            Influencersort("onemonth", false);
+                                            setmonth((prev) => !prev);
+                                        }}><img src={process.env.PUBLIC_URL + (onMonth ? "icon-03-18-px-outline-down-off.svg" : "icon-03-18-px-outline-down-on.svg")} alt="down"/></button>
                                     </span>
                                 </div>
                             </th>
