@@ -87,8 +87,8 @@ const Search = ({close, InfluencerArray, raisingArray}) => {
                         </ul>
                     </div>
                 </div>
-                <div className="hide-area"></div>
             </div>
+            <div className="hide-area"></div>
         </div>
     );
 }

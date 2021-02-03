@@ -31,12 +31,11 @@ const Main = ({InfluencerArray, raisingArray}) => {
                 </div>
                 <div className="data-num">
                     <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="1000">
-                        <span className="counter01"><CountUp end={181647}/></span><span>건</span>&nbsp;데이터 수집
+                        <span className="counter01"><CountUp end={181647} separator=","/></span><span>건</span>&nbsp;데이터 수집
                     </p>
                     <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
-                        <span className="counter02"><CountUp end={2486}/></span><span>명</span>&nbsp;검증된 인플루언서</p>
+                        <span className="counter02"><CountUp end={2486} separator=","/></span><span>명</span>&nbsp;검증된 인플루언서</p>
 		    <Link to="/influencer" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" className="go-page">데이터 확인하러 가기</Link>
-                    <p data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">2021년 1월 기준</p>
                 </div>
                 <div className="simple">
                     <div className="flex-box">
